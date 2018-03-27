@@ -3,8 +3,10 @@ from .form import *
 from django.contrib.auth.models import User
 from .models import Student_profile,Doctor_profile
 from django.contrib.auth.models import Group
-from django.views.generic.edit import UpdateView,DeleteView,CreateView
+from django.views.generic.edit import UpdateView,DeleteView
+from chat_system.models import MessageNotification
 from django.urls import reverse_lazy
+import datetime
 # Create your views here.
 
 
@@ -30,8 +32,12 @@ def add_student(request):
         user          = User.objects.get(username=user_name)
         student_group.user_set.add(user)
         return redirect('admin-dashboard:add-st-profile')
+    notifications = MessageNotification.objects.filter(date=datetime.date.today()).order_by('-created')
+    count = MessageNotification.objects.filter(date=datetime.date.today()).count()
     context       = {
             "form":form,
+            'notifications':notifications,
+            'count':count
     }
     return render(request,template_name,context)
 
@@ -72,19 +78,29 @@ def add_student_profile(request):
             )
 
         return redirect('admin-dashboard:add-student')
+
+    notifications = MessageNotification.objects.filter(date=datetime.date.today()).order_by('-created')
+    count = MessageNotification.objects.filter(date=datetime.date.today()).count()
+
     context = {
         "form":form,
-        "queryset":queryset
+        "queryset":queryset,
+        'notifications': notifications,
+        'count': count
     }
     return render(request,template_name,context)
 
 def student_list(request):
     template_name = 'super-admin/admin-student-list.html'
     queryset = Student_profile.objects.filter(user__groups__name='Students')
-    print(queryset)
+
+    notifications = MessageNotification.objects.filter(date=datetime.date.today()).order_by('-created')
+    count = MessageNotification.objects.filter(date=datetime.date.today()).count()
 
     context ={
             "students":queryset,
+        'notifications': notifications,
+        'count': count
 
     }
     return render(request,template_name,context)
@@ -106,10 +122,26 @@ class UpdateStudentProfile(UpdateView):
     template_name = 'super-admin/admin-student-update.html'
     success_url = reverse_lazy('admin-dashboard:students-list')
 
+    def get_context_data(self, **kwargs):
+        context  = super(UpdateStudentProfile,self).get_context_data(**kwargs)
+        notifications = MessageNotification.objects.filter(date=datetime.date.today()).order_by('-created')
+        count = MessageNotification.objects.filter(date=datetime.date.today()).count()
+        context['notifications']=notifications
+        context['count'] = count
+        return context
+
 class DeleteStudentProfile(DeleteView):
     model = Student_profile
     template_name = 'super-admin/admin-student-delete.html'
     success_url = reverse_lazy('admin-dashboard:students-list')
+
+    def get_context_data(self, **kwargs):
+        context  = super(DeleteStudentProfile,self).get_context_data(**kwargs)
+        notifications = MessageNotification.objects.filter(date=datetime.date.today()).order_by('-created')
+        count = MessageNotification.objects.filter(date=datetime.date.today()).count()
+        context['notifications']=notifications
+        context['count'] = count
+        return context
 
 '''
 /*************************************************************************/
@@ -129,8 +161,14 @@ def add_doctor(request):
         user          = User.objects.get(username=user_name)
         doctor_group.user_set.add(user)
         return redirect('admin-dashboard:add-doc-profile')
+
+    notifications = MessageNotification.objects.filter(date=datetime.date.today()).order_by('-created')
+    count = MessageNotification.objects.filter(date=datetime.date.today()).count()
+
     context       = {
             "form":form,
+        'notifications': notifications,
+        'count': count
     }
     return render(request,template_name,context)
 
@@ -184,9 +222,15 @@ def add_doctor_profile(request):
             )
 
         return redirect('admin-dashboard:add-doctor')
+
+    notifications = MessageNotification.objects.filter(date=datetime.date.today()).order_by('-created')
+    count = MessageNotification.objects.filter(date=datetime.date.today()).count()
+
     context = {
         "form":form,
-        "queryset":queryset
+        "queryset":queryset,
+        'notifications': notifications,
+        'count': count
     }
     return render(request,template_name,context)
 
@@ -194,8 +238,13 @@ def doctor_list(request):
     template_name = 'super-admin/admin-doctor-list.html'
     queryset = Doctor_profile.objects.filter(user__groups__name='Doctors')
 
+    notifications = MessageNotification.objects.filter(date=datetime.date.today()).order_by('-created')
+    count = MessageNotification.objects.filter(date=datetime.date.today()).count()
+
     context ={
             "doctors":queryset,
+        'notifications': notifications,
+        'count': count
 
     }
     return render(request,template_name,context)
@@ -228,7 +277,23 @@ class UpdateDoctorProfile(UpdateView):
     template_name = 'super-admin/admin-doctor-update.html'
     success_url = reverse_lazy('admin-dashboard:doctors-list')
 
+    def get_context_data(self, **kwargs):
+        context  = super(UpdateDoctorProfile,self).get_context_data(**kwargs)
+        notifications = MessageNotification.objects.filter(date=datetime.date.today()).order_by('-created')
+        count = MessageNotification.objects.filter(date=datetime.date.today()).count()
+        context['notifications']=notifications
+        context['count'] = count
+        return context
+
 class DeleteDoctorProfile(DeleteView):
     model = Doctor_profile
     template_name = 'super-admin/admin-doctor-delete.html'
     success_url = reverse_lazy('admin-dashboard:doctors-list')
+
+    def get_context_data(self, **kwargs):
+        context  = super(DeleteDoctorProfile,self).get_context_data(**kwargs)
+        notifications = MessageNotification.objects.filter(date=datetime.date.today()).order_by('-created')
+        count = MessageNotification.objects.filter(date=datetime.date.today()).count()
+        context['notifications']=notifications
+        context['count'] = count
+        return context
