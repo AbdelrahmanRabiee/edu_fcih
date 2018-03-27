@@ -1,0 +1,122 @@
+{% extends 'base/dashboard/base.html' %}
+	{% block content %}
+
+			<!-- MAIN CONTENT -->
+			<div class="main-content" id="content-wrapper">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-12 clear-padding-xs">
+							<h5 class="page-title"><i class="fa fa-user"></i>UPDATE STUDENT</h5>
+							<div class="section-divider"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-12 clear-padding-xs">
+							<div class="col-md-12">
+								<div class="dash-item first-dash-item">
+									<h6 class="item-title"><i class="fa fa-user"></i>STUDENT INFO</h6>
+									<div class="inner-item">
+										<div class="dash-form">
+                                            <form  method="post" enctype="multipart/form-data" >
+                                                {% csrf_token %}
+{#											<div class="col-sm-3">#}
+{#                                            {{ form.user_name.errors }}#}
+{#												<label class="clear-top-margin"><i class="fa fa-user-circle-o"></i>STUDENT ID</label>#}
+{##}
+{#                                                <select name="user_name">#}
+{#                                                    {% for user in queryset %}#}
+{#                                                    <option value="{{ user.username }}">{{ user.username }}</option>#}
+{#                                                    {% endfor %}#}
+{#                                                </select>#}
+{#                                                {{ form.user_name }}#}
+{##}
+{#											</div>#}
+											<div class="col-sm-3">
+                                                {{ form.first_name.errors }}
+												<label class="clear-top-margin"><i class="fa fa-user-circle-o"></i>FIRST NAME</label>
+												{{ form.first_name }}
+											</div>
+											<div class="col-sm-3">
+												<label class="clear-top-margin"><i class="fa fa-user-circle-o"></i>LAST NAME</label>
+												{{ form.last_name }}
+											</div>
+											<div class="col-sm-3">
+												<label class="clear-top-margin"><i class="fa fa-venus"></i>GENDER</label>
+{#                                                <select name="gender">#}
+{#													<option>-- Select --</option>#}
+{#													<option>Male</option>#}
+{#													<option>Female</option>#}
+{#												</select>#}
+                                                {{ form.gender }}
+											</div>
+											<div class="clearfix"></div>
+											<div class="col-sm-3">
+												<label><i class="fa fa-calendar"></i>DATE OF BIRTH</label>
+                                                {{ form.date_birth }}
+
+											</div>
+											<div class="col-sm-3">
+												<label><i class="fa fa-phone"></i>PHONE #</label>
+												{{ form.phone }}
+											</div>
+											<div class="col-sm-3">
+												<label><i class="fa fa-envelope-o"></i>EMAIL</label>
+												{{ form.email }}
+											</div>
+											<div class="col-sm-3">
+												<label><i class="fa fa-bell-o"></i>RELIGION</label>
+{#												<select name="religion">#}
+{#													<option>-- Select --</option>#}
+{#													<option>Muslim</option>#}
+{#													<option>Christian</option>#}
+{#												</select>#}
+                                                {{ form.religion }}
+											</div>
+											<div class="clearfix"></div>
+                                            <div class="col-sm-3">
+												<label><i class="fa fa-bell-o"></i>Level</label>
+{#												<select name="level">#}
+{#													<option>-- Select --</option>#}
+{#													<option>Level 1</option>#}
+{#													<option>Level 1 continue</option>#}
+{#                                                    <option>Level 2</option>#}
+{#													<option>Level 2 continue</option>#}
+{#                                                    <option>Level 3</option>#}
+{#													<option>Level 3 continue</option>#}
+{#                                                    <option>Level 4</option>#}
+{#													<option>Level 4 continue</option>#}
+{#												</select>#}
+                                                {{ form.level }}
+											</div>
+											<div class="col-sm-3">
+												<label><i class="fa fa-file-picture-o"></i>UPLOAD PHOTO</label>
+												{{ form.img }}
+											</div>
+                                            <div class="clearfix"></div>
+                                            <br>
+                                            <br>
+                                            <div class="col-sm-12">
+												<button type="submit"><i class="fa fa-pencil"></i> UPDATE </button>
+											</div>
+                                            </form>
+
+
+										</div>
+										<div class="clearfix"></div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="menu-togggle-btn">
+					<a href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars"></i></a>
+				</div>
+				<div class="dash-footer col-lg-12">
+
+				</div>
+			</div>
+		{% endblock %}

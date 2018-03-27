@@ -1,0 +1,65 @@
+{% extends 'base/dashboard/base.html' %}
+
+{% block content %}
+			<!-- MAIN CONTENT -->
+			<div class="main-content" id="content-wrapper">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-12 clear-padding-xs">
+							<h5 class="page-title"><i class="fa fa-user-secret"></i>ALL DOCTORS</h5>
+							<div class="section-divider"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-12 clear-padding-xs">
+							<div class="col-lg-12">
+								<div class="dash-item first-dash-item">
+									<h6 class="item-title"><i class="fa fa-user"></i>DOCTORS</h6>
+									<div class="inner-item">
+										<table id="attendenceDetailedTable" class="display responsive nowrap" cellspacing="0" width="100%">
+											<thead>
+												<tr>
+													<th><i class="fa fa-user"></i>NAME</th>
+													<th><i class="fa fa-graduation-cap"></i>HIGHEST DEGREE</th>
+													<th><i class="fa fa-building"></i>UNIVERSITY</th>
+													<th><i class="fa fa-calendar"></i>YEAR PASSED</th>
+													<th><i class="fa fa-puzzle-piece"></i>CGPA</th>
+													<th><i class="fa fa-phone"></i>CONTACT #</th>
+													<th><i class="fa fa-envelope-o"></i>EMAIL</th>
+													<th><i class="fa fa-tasks"></i>ACTION</th>
+												</tr>
+											</thead>
+											<tbody>
+                                            {%   for doctor in doctors %}
+												<tr>
+													<td>{{ doctor.first_name }} {{ doctor.last_name }}</td>
+													<td>{{ doctor.highest_degree }}</td>
+													<td>{{ doctor.university_high }}</td>
+													<td>{{ doctor.year_passed_high }}</td>
+													<td>{{ doctor.gpa_high }}</td>
+													<td>{{ doctor.phone }}</td>
+													<td>{{ doctor.email }}</td>
+													<td class="action-link">
+														<a class="edit" href="{% url 'admin-dashboard:doctor-update' doctor.pk %}" title="Edit" ><i class="fa fa-edit"></i></a>
+														<a class="delete" href="{% url 'admin-dashboard:doctor-delete' doctor.pk %}" title="Delete" ><i class="fa fa-remove"></i></a>
+													</td>
+												</tr>
+                                            {% endfor %}
+
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="menu-togggle-btn">
+					<a href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars"></i></a>
+				</div>
+
+				
+
+
+{% endblock %}
+	

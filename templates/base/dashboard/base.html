@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="">
+        <title>Pathshala - Responsive Education Template</title>
+
+        {% include 'base/dashboard/static/css.html' %}
+        {% include 'base/dashboard/static/fonts.html' %}
+
+
+
+    </head>
+    <body>
+<div class="row dashboard-top-nav">
+			<div class="col-sm-3 logo">
+				<h5><i class="fa fa-book"></i>PATHSHALA</h5>
+			</div>
+			<div class="col-sm-4 top-search">
+				<div class="search">
+					<i class="fa fa-search"></i>
+					<input type="text" placeholder="Search">
+				</div>
+			</div>
+			<div class="col-sm-5 notification-area">
+				<ul class="top-nav-list">
+					<li class="notification dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="fa fa-bell-o"></i>
+							<span class="badge nav-badge">{{ count }}</span>
+						</a>
+						<ul class="dropdown-menu notification-list">
+							 {% for notification in notifications %}
+
+
+                            <li>
+								<div class="list-msg">
+									<div class="col-xs-2 icon clear-padding">
+										<i class="fa fa-trophy"></i>
+									</div>
+									<div class="col-sm-10 desc">
+										<h5><a href="#">{{ notification.notify_message }}</a></h5>
+										<h6><i class="fa fa-clock-o"></i> {{ notification.created|timesince }}</h6>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</li>
+                            {% endfor %}
+							<li>
+								<div class="all-notifications">
+									<a href="#">VIEW ALL NOTIFICATIONS</a>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li class="message dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="fa fa-comment-o"></i>
+							<span class="badge nav-badge">5</span>
+						</a>
+						<ul class="dropdown-menu notification-list">
+							<li>
+								<div class="list-msg">
+									<div class="col-xs-2 image clear-padding">
+										<img src="{% static 'dashboard/img/parent/parent2.jpg' %}" alt="user" />
+									</div>
+									<div class="col-sm-10 desc">
+										<h5><a href="#">John Doe</a></h5>
+										<p>Lorem Ipsum is simply dummy text.</p>
+										<h6><i class="fa fa-clock-o"></i> 1 day ago</h6>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</li>
+							<li>
+								<div class="list-msg">
+									<div class="col-xs-2 image clear-padding">
+										<img src="{% static 'dashboard/img/parent/parent1.jpg' %}" alt="user" />
+									</div>
+									<div class="col-sm-10 desc">
+										<h5><a href="#">Lenore Doe</a></h5>
+										<p>Lorem Ipsum is simply dummy text.</p>
+										<h6><i class="fa fa-clock-o"></i> 1 day ago</h6>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</li>
+							<li>
+								<div class="all-notifications">
+									<a href="#">VIEW ALL MESSAGES</a>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li class="user dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<span><img src="{% static 'dashboard/img/parent/parent2.jpg' %}" alt="user">JOHN DOE<span class="caret"></span></span>
+						</a>
+						<ul class="dropdown-menu notification-list">
+							<li>
+								<a href="#"><i class="fa fa-cogs"></i> SETTINGS</a>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-users"></i> USER PROFILE</a>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-key"></i> CHANGE PASSWORD</a>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-cogs"></i> SETTINGS</a>
+							</li>
+							<li>
+								<div class="all-notifications">
+									<a href="#">LOGOUT</a>
+								</div>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+<div class="parent-wrapper" id="outer-wrapper">
+			<!-- SIDE MENU -->
+			<div class="sidebar-nav-wrapper" id="sidebar-wrapper">
+				<ul class="sidebar-nav">
+					<li>
+						<a href="{% url 'admin-dashboard:admin-home' %}"><i class="fa fa-home menu-icon"></i> HOME</a>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="fa fa-users menu-icon"></i> STUDENTS <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="{% url 'admin-dashboard:add-student' %}"><i class="fa fa-caret-right"></i>ADD</a>
+							</li>
+							<li>
+								<a href="{% url 'admin-dashboard:add-st-profile' %}"><i class="fa fa-caret-right"></i>ADD PROFILE  </a>
+							</li>
+                            <li>
+								<a href="{% url 'admin-dashboard:students-list' %}"><i class="fa fa-caret-right"></i>ALL STUDENT  </a>
+							</li>
+						</ul>
+						<div class="clearfix"></div>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="fa fa-user-secret menu-icon"></i> DOCTORS <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="{% url 'admin-dashboard:add-doctor' %}"><i class="fa fa-caret-right"></i>ADD</a>
+							</li>
+                            <li>
+								<a href="{% url 'admin-dashboard:add-doc-profile' %}"><i class="fa fa-caret-right"></i>ADD PROFILE</a>
+							</li>
+							<li>
+								<a href="{% url 'admin-dashboard:doctors-list' %}"><i class="fa fa-caret-right"></i>ALL DOCTORS</a>
+							</li>
+						</ul>
+						<div class="clearfix"></div>
+					</li>
+					<li>
+						<a href="{% url 'chat_system:message' %}"><i class="fa fa-envelope menu-icon"></i> MY MESSAGES</a>
+					</li>
+					<li>
+						<a href="admin-add-announcement.html"><i class="fa fa-bullhorn menu-icon"></i> ANNOUNCEMENTS</a>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="fa fa-file-o menu-icon"></i> CLASSES <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="admin-add-class.html"><i class="fa fa-caret-right"></i>ADD CLASS</a>
+							</li>
+							<li>
+								<a href="admin-add-section.html"><i class="fa fa-caret-right"></i>ADD SECTION</a>
+							</li>
+							<li>
+								<a href="admin-add-class.html"><i class="fa fa-caret-right"></i>VIEW SECTIONS</a>
+							</li>
+							<li>
+								<a href="admin-add-section.html"><i class="fa fa-caret-right"></i>VIEW CLASSES</a>
+							</li>
+						</ul>
+						<div class="clearfix"></div>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="fa fa-book menu-icon"></i> SUBJECTS <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="admin-add-subject.html"><i class="fa fa-caret-right"></i>ADD</a>
+							</li>
+							<li>
+								<a href="admin-add-subject.html"><i class="fa fa-caret-right"></i>VIEW SUBJECTS</a>
+							</li>
+						</ul>
+						<div class="clearfix"></div>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="fa fa-calendar menu-icon"></i> TIMETABLE <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="admin-create-timetable.html"><i class="fa fa-caret-right"></i>CREATE</a>
+							</li>
+							<li>
+								<a href="admin-class-timetable.html"><i class="fa fa-caret-right"></i>VIEW</a>
+							</li>
+						</ul>
+						<div class="clearfix"></div>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="fa fa-address-card menu-icon"></i> REPORTS <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="teacher-attendence-report.html"><i class="fa fa-caret-right"></i>ATTENDENCE</a>
+							</li>
+							<li>
+								<a href="teacher-marks-report.html"><i class="fa fa-caret-right"></i>MARKS</a>
+							</li>
+						</ul>
+						<div class="clearfix"></div>
+					</li>
+				</ul>
+			</div>
+    {% block content %}
+
+    {% endblock content %}
+
+</div>
+{% include 'base/dashboard/static/js.html' %}
+    </body>
+
+</html>
