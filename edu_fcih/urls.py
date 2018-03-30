@@ -28,7 +28,8 @@ urlpatterns = [
 urlpatterns += [
         path('admin/',include('admin_dashboard.urls',namespace='admin-dashboard')),
         path('auth/',include('accounts.urls',namespace='accounts')),
-        path('message/',include('chat_system.urls',namespace='chat_system')),
+        path('admin/message/',include('chat_system.urls',namespace='chat_system')),
+        path('admin/announcement/',include('announcement.urls',namespace='announcement')),
         path('',index)
 
 ]

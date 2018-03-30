@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'admin_dashboard',
-    'chat_system'
+    'chat_system',
+    'announcement'
 ]
 
 MIDDLEWARE = [

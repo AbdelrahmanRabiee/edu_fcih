@@ -4,16 +4,35 @@ from django.contrib.auth.models import User
 from .models import Student_profile,Doctor_profile
 from django.contrib.auth.models import Group
 from django.views.generic.edit import UpdateView,DeleteView
-from chat_system.models import MessageNotification
+from chat_system.models import MessageNotification,Message
 from django.urls import reverse_lazy
 import datetime
+from announcement.models import Announcement
+
 # Create your views here.
 
 
 def admin_dashboard(request):
+    students_count     = Group.objects.get(name="Students").user_set.all().count
+    doctors_count      = Group.objects.get(name="Doctors").user_set.all().count
+    announcement_count = Announcement.objects.all().count()
+    announcement_academic = Announcement.objects.filter(an_type='Academic').order_by('-created')
+    announcement_administrative = Announcement.objects.filter(an_type='Administrative').order_by('-created')
+    message_count = Message.objects.all().count()
+    notifications = MessageNotification.objects.filter(date=datetime.date.today()).order_by('-created')
+    count = MessageNotification.objects.filter(date=datetime.date.today()).count()
+    date = datetime.date.today()
     template_name = 'super-admin/admin-dashboard.html'
     context       = {
-
+                'students_count':students_count,
+                'doctors_count':doctors_count,
+                'announcement_count':announcement_count,
+                'message_count':message_count,
+                'notifications': notifications,
+                'count': count,
+                'announcement_academic':announcement_academic,
+                'announcement_administrative':announcement_administrative,
+                'date':date,
     }
 
     return render(request,template_name,context)

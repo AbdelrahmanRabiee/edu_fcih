@@ -1,8 +1,6 @@
 from django import forms
 from django.contrib.auth.models import Group,User
 
-
-
 class SendMessageForm(forms.Form):
     reciever_student = forms.ModelChoiceField(required=False,
         queryset=Group.objects.get(name="Students").user_set.all().order_by('-id')

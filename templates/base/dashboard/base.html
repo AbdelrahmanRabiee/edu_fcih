@@ -7,7 +7,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="">
-        <title>Pathshala - Responsive Education Template</title>
+        <title>Edu-FCIH</title>
 
         {% include 'base/dashboard/static/css.html' %}
         {% include 'base/dashboard/static/fonts.html' %}
@@ -18,7 +18,7 @@
     <body>
 <div class="row dashboard-top-nav">
 			<div class="col-sm-3 logo">
-				<h5><i class="fa fa-book"></i>PATHSHALA</h5>
+				<a href="{% url 'admin-dashboard:admin-home' %}"><h5><i class="fa fa-book"></i>Edu-FCIH</h5></a>
 			</div>
 			<div class="col-sm-4 top-search">
 				<div class="search">
@@ -98,7 +98,7 @@
 					</li>
 					<li class="user dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							<span><img src="{% static 'dashboard/img/parent/parent2.jpg' %}" alt="user">JOHN DOE<span class="caret"></span></span>
+							<span><img src="{% static 'dashboard/img/parent/parent2.jpg' %}" alt="user">{{ request.user }}<span class="caret"></span></span>
 						</a>
 						<ul class="dropdown-menu notification-list">
 							<li>
@@ -168,7 +168,7 @@
 						<a href="{% url 'chat_system:message' %}"><i class="fa fa-envelope menu-icon"></i> MY MESSAGES</a>
 					</li>
 					<li>
-						<a href="admin-add-announcement.html"><i class="fa fa-bullhorn menu-icon"></i> ANNOUNCEMENTS</a>
+						<a href="{% url 'announcement:create_announcement' %}"><i class="fa fa-bullhorn menu-icon"></i> ANNOUNCEMENTS</a>
 					</li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
