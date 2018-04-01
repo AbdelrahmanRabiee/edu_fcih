@@ -1,0 +1,78 @@
+{% extends 'base/dashboard/base.html' %}
+	{% block content %}
+			<!-- MAIN CONTENT -->
+			<div class="main-content" id="content-wrapper">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-12 clear-padding-xs">
+							<h5 class="page-title"><i class="fa fa-sliders"></i>ALL TERMS</h5>
+							<div class="section-divider"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-12 clear-padding-xs">
+							<div class="col-sm-4">
+								<div class="dash-item first-dash-item">
+									<h6 class="item-title"><i class="fa fa-plus-circle"></i>ADD TERM</h6>
+									<div class="inner-item">
+                                        <form method="post">
+                                            {% csrf_token %}
+										<div class="dash-form">
+											<label class="clear-top-margin"><i class="fa fa-book"></i>TERM NAME</label>
+											{{ form.name }}
+                                            <label><i class="fa fa-info-circle"></i>DESCRIPTION</label>
+											{{ form.description }}
+											<label><i class="fa fa-user-secret"></i>TERM COURSES</label>
+											{{ form.courses }}
+                                            <div class="clearfix"></div>
+                                            <br>
+											<div>
+												<button type="submit"><i class="fa fa-paper-plane"></i> CREATE</button>
+											</div>
+										</div>
+                                        </form>
+										<div class="clearfix"></div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+							<div class="col-sm-8">
+								<div class="dash-item first-dash-item">
+									<h6 class="item-title"><i class="fa fa-sliders"></i>ALL TERMS</h6>
+									<div class="inner-item">
+										<table id="attendenceDetailedTable" class="display responsive nowrap" cellspacing="0" width="100%">
+											<thead>
+												<tr>
+													<th><i class="fa fa-book"></i>TERM NAME</th>
+													<th><i class="fa fa-info-circle"></i>DESCRIPTION</th>
+                                                    <th><i class="fa fa-book"></i>TERM COURSES</th>
+													<th><i class="fa fa-sliders"></i>ACTION</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													{% for term in termat %}
+													<td>{{ term.name }}</td>
+													<td>{{ term.description }}</td>
+                                                    <td><a href="{% url 'courses:display-courses' term.pk %}">view courses</a></td>
+													<td class="action-link">
+														<a class="edit" href="#" title="Edit" data-toggle="modal" data-target="#editDetailModal"><i class="fa fa-edit"></i></a>
+														<a class="delete" href="#" title="Delete" data-toggle="modal" data-target="#deleteDetailModal"><i class="fa fa-remove"></i></a>
+													</td>
+												</tr>
+												{% endfor %}
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="menu-togggle-btn">
+					<a href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars"></i></a>
+				</div>
+
+				
+			</div>
+{% endblock %}

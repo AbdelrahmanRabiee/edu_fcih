@@ -1,0 +1,82 @@
+{% extends 'base/dashboard/base.html' %}
+	{% block content %}
+			<!-- MAIN CONTENT -->
+			<div class="main-content" id="content-wrapper">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-12 clear-padding-xs">
+							<h5 class="page-title"><i class="fa fa-cogs"></i>ALL SUBJECTS</h5>
+							<div class="section-divider"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-12 clear-padding-xs">
+							<div class="col-sm-4">
+								<div class="dash-item first-dash-item">
+									<h6 class="item-title"><i class="fa fa-plus-circle"></i>ADD SUBJECT</h6>
+									<div class="inner-item">
+                                        <form method="post">
+                                            {% csrf_token %}
+										<div class="dash-form">
+											<label class="clear-top-margin"><i class="fa fa-book"></i>NAME</label>
+											{{ form.name }}
+											<label><i class="fa fa-code"></i>SUBJECT CODE</label>
+											{{ form.code }}
+                                            <label><i class="fa fa-code"></i>SUBJECT HOURS</label>
+											{{ form.credit_hours }}
+											<label><i class="fa fa-info-circle"></i>DESCRIPTION</label>
+											{{ form.description }}
+                                            <div class="clearfix"></div>
+                                            <br>
+											<div>
+												<button ><i class="fa fa-paper-plane"></i> CREATE</button>
+											</div>
+										</div>
+                                            </form>
+										<div class="clearfix"></div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+							<div class="col-sm-8">
+								<div class="dash-item first-dash-item">
+									<h6 class="item-title"><i class="fa fa-sliders"></i>ALL COURSES</h6>
+									<div class="inner-item">
+										<table id="attendenceDetailedTable" class="display responsive nowrap" cellspacing="0" width="100%">
+											<thead>
+												<tr>
+													<th><i class="fa fa-book"></i>NAME</th>
+													<th><i class="fa fa-code"></i>CODE</th>
+                                                    <th><i class="fa fa-code"></i>HOURS</th>
+													<th><i class="fa fa-info-circle"></i>DESCRIPTION</th>
+													<th><i class="fa fa-sliders"></i>ACTION</th>
+												</tr>
+											</thead>
+											<tbody>
+                                            {% for course in courses %}
+												<tr>
+													<td>{{ course.name }}</td>
+													<td>{{ course.code }}</td>
+                                                    <td>{{ course.credit_hours }}</td>
+													<td>{{ course.description }}</td>
+													<td class="action-link">
+														<a class="edit" href="{% url 'courses:update-course' course.pk  %}" title="Edit"><i class="fa fa-edit"></i></a>
+														<a class="delete" href="{% url 'courses:delete-course' course.pk %}" title="Delete" ><i class="fa fa-remove"></i></a>
+													</td>
+												</tr>
+												{% endfor %}
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="menu-togggle-btn">
+					<a href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars"></i></a>
+				</div>
+
+				
+			</div>
+	{% endblock %}

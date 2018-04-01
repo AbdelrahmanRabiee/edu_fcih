@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'accounts',
     'admin_dashboard',
     'chat_system',
-    'announcement'
+    'announcement',
+    'courses'
 ]
 
 MIDDLEWARE = [

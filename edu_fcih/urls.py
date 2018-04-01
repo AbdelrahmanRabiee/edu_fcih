@@ -30,6 +30,7 @@ urlpatterns += [
         path('auth/',include('accounts.urls',namespace='accounts')),
         path('admin/message/',include('chat_system.urls',namespace='chat_system')),
         path('admin/announcement/',include('announcement.urls',namespace='announcement')),
+        path('admin/course/',include('courses.urls',namespace='courses')),
         path('',index)
 
 ]

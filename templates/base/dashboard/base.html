@@ -172,11 +172,11 @@
 					</li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							<i class="fa fa-file-o menu-icon"></i> CLASSES <span class="caret"></span>
+							<i class="fa fa-file-o menu-icon"></i> TERM <span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="admin-add-class.html"><i class="fa fa-caret-right"></i>ADD CLASS</a>
+								<a href="{% url 'courses:add_term' %}"><i class="fa fa-caret-right"></i>ADD TERM</a>
 							</li>
 							<li>
 								<a href="admin-add-section.html"><i class="fa fa-caret-right"></i>ADD SECTION</a>
@@ -192,15 +192,13 @@
 					</li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							<i class="fa fa-book menu-icon"></i> SUBJECTS <span class="caret"></span>
+							<i class="fa fa-book menu-icon"></i> COURSES <span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="admin-add-subject.html"><i class="fa fa-caret-right"></i>ADD</a>
+								<a href="{% url 'courses:add_course' %}"><i class="fa fa-caret-right"></i>ADD COURSE</a>
 							</li>
-							<li>
-								<a href="admin-add-subject.html"><i class="fa fa-caret-right"></i>VIEW SUBJECTS</a>
-							</li>
+
 						</ul>
 						<div class="clearfix"></div>
 					</li>
