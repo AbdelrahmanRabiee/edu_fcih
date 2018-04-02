@@ -7,7 +7,9 @@ from django.views.generic.edit import UpdateView,DeleteView
 from django.urls import reverse_lazy
 # Create your views here.
 
-
+'''
+/******************* Courses CRUD **********************************/
+'''
 def add_course(request):
 
     form = AddCourseForm(request.POST or None)
@@ -34,42 +36,6 @@ def add_course(request):
         'notifications': notifications,
     }
     return render(request,template_name,context)
-
-def add_term(request):
-    form = AddTermForm(request.POST or None)
-    if form.is_valid():
-        print("valid")
-        name        = form.cleaned_data.get('name')
-        description = form.cleaned_data.get('description')
-        courses     = form.cleaned_data.get('courses')
-
-        obj=Term.objects.create(
-            name=name,
-            description=description,
-
-        )
-        for course in courses:
-            obj.courses.add(course)
-        return redirect('courses:add_term')
-    termat = Term.objects.all().order_by('-created')
-    template_name = 'courses/admin-add-term.html'
-    context       = {
-        'form':form,
-        'termat':termat,
-
-    }
-    return render(request, template_name, context)
-
-def display_courses_in_term(request,pk):
-    coursez = Term.objects.get(pk=pk).courses.all().order_by('-created')
-    template_name = 'courses/admin-display-courses.html'
-    context = {
-        'courses':coursez
-    }
-
-    return render(request,template_name,context)
-
-
 
 class UpdateCourse(UpdateView):
     model = Course
@@ -104,6 +70,88 @@ class DeleteCourse(DeleteView):
         context['count'] = count
         return context
 
+'''
+/*******************END Courses CRUD **********************************/
+'''
+
+'''
+/******************* TERM CRUD **********************************/
+'''
+def add_term(request):
+    form = AddTermForm(request.POST or None)
+    if form.is_valid():
+        print("valid")
+        name        = form.cleaned_data.get('name')
+        description = form.cleaned_data.get('description')
+        courses     = form.cleaned_data.get('courses')
+
+        obj=Term.objects.create(
+            name=name,
+            description=description,
+
+        )
+        for course in courses:
+            obj.courses.add(course)
+        return redirect('courses:add_term')
+    termat = Term.objects.all().order_by('-created')
+    notifications = MessageNotification.objects.filter(date=datetime.date.today()).order_by('-created')
+    count = MessageNotification.objects.filter(date=datetime.date.today()).count()
+
+    template_name = 'courses/admin-add-term.html'
+    context       = {
+        'form':form,
+        'termat':termat,
+        'count': count,
+        'notifications': notifications,
+
+    }
+    return render(request, template_name, context)
+
+def display_courses_in_term(request,pk):
+    coursez = Term.objects.get(pk=pk).courses.all().order_by('-created')
+    template_name = 'courses/admin-display-courses.html'
+    context = {
+        'courses':coursez
+    }
+
+    return render(request,template_name,context)
+
+class UpdateTerm(UpdateView):
+    model = Term
+    fields = [
+        'name',
+        'description',
+        'courses',
+    ]
+    template_name = 'courses/admin-term-update.html'
+    success_url = reverse_lazy('courses:add_term')
+
+    def get_context_data(self, **kwargs):
+        context  = super(UpdateTerm,self).get_context_data(**kwargs)
+        notifications = MessageNotification.objects.filter(date=datetime.date.today()).order_by('-created')
+        count = MessageNotification.objects.filter(date=datetime.date.today()).count()
+        context['notifications']=notifications
+        context['count'] = count
+        return context
+
+
+class DeleteTerm(DeleteView):
+    model = Term
+    template_name = 'courses/admin-term-delete.html'
+    success_url = reverse_lazy('courses:add_term')
+
+    def get_context_data(self, **kwargs):
+        context  = super(DeleteTerm,self).get_context_data(**kwargs)
+        notifications = MessageNotification.objects.filter(date=datetime.date.today()).order_by('-created')
+        count = MessageNotification.objects.filter(date=datetime.date.today()).count()
+        context['notifications']=notifications
+        context['count'] = count
+        return context
+
+
+'''
+/******************* END TERM CRUD **********************************/
+'''
 
 
 

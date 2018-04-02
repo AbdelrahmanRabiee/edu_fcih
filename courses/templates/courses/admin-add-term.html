@@ -56,8 +56,8 @@
 													<td>{{ term.description }}</td>
                                                     <td><a href="{% url 'courses:display-courses' term.pk %}">view courses</a></td>
 													<td class="action-link">
-														<a class="edit" href="#" title="Edit" data-toggle="modal" data-target="#editDetailModal"><i class="fa fa-edit"></i></a>
-														<a class="delete" href="#" title="Delete" data-toggle="modal" data-target="#deleteDetailModal"><i class="fa fa-remove"></i></a>
+														<a class="edit" href="{% url 'courses:update-term' term.pk %}" title="Edit"><i class="fa fa-edit"></i></a>
+														<a class="delete" href="{% url 'courses:delete-term' term.pk %}" title="Delete" ><i class="fa fa-remove"></i></a>
 													</td>
 												</tr>
 												{% endfor %}

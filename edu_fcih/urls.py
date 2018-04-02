@@ -31,6 +31,7 @@ urlpatterns += [
         path('admin/message/',include('chat_system.urls',namespace='chat_system')),
         path('admin/announcement/',include('announcement.urls',namespace='announcement')),
         path('admin/course/',include('courses.urls',namespace='courses')),
+        path('student/',include('student_dashboard.urls',namespace='student-dashboard')),
         path('',index)
 
 ]

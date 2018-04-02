@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'admin_dashboard',
     'chat_system',
     'announcement',
-    'courses'
+    'courses',
+    'student_dashboard'
 ]
 
 MIDDLEWARE = [
