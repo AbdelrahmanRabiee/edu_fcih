@@ -1,5 +1,8 @@
 {% extends 'base/dashboard/base_student.html' %}
 {% load static %}
+{% load app_filters %}
+{% load convert_id_reciever %}
+{% load convert_id_img %}
 	{% block content %}
 			<!-- MAIN CONTENT -->
 			<div class="main-content" id="content-wrapper">
@@ -105,44 +108,44 @@
 									<div class="inner-item">
 										<div class="profile-intro">
 											<div class="col-xs-4 col-sm-12 col-md-4 clear-padding">
-												<img src="{% static '/img/parent/parent2.jpg' %}" alt="user" />
+												<img src="{{ profile_info.img.url }}" alt="user" />
 											</div>
 											<div class="col-xs-8 col-sm-12 col-md-8">
-												<h5>JOHN DOE</h5>
-												<h6>Student, Std 5</h6>
-												<h6>Reg#: 109010</h6>
+												<h5>{{ profile_info.first_name }} {{ profile_info.last_name }}</h5>
+												<h6>{{ profile_info.level }}</h6>
+												<h6>ID: {{ profile_info.user }}</h6>
 											</div>
 											<div class="clearfix"></div>
 										</div>
 										<div class="profile-details">
 											<div class="detail-row">
 												<div class="col-md-6 col-sm-12 col-xs-6 clear-padding">
-													<span>NAME</span>
-													<p>John Doe</p>
+													<span>PHONE </span>
+													<p>{{ profile_info.phone }}</p>
 												</div>
 												<div class="col-md-6 col-sm-12 col-xs-6 clear-padding">
-													<span>REGISTRATION #</span>
-													<p>109010</p>
-												</div>
-												<div class="clearfix"></div>
-											</div>
-											<div class="clearfix"></div>
-											<div class="detail-row">
-												<div class="col-md-6 col-sm-12 col-xs-6 clear-padding">
-													<span>ROLL NO</span>
-													<p>PTH030A10</p>
-												</div>
-												<div class="col-md-6 col-sm-12 col-xs-6 clear-padding">
-													<span>SECTION</span>
-													<p>PTH030A</p>
+													<span>EMAIL</span>
+													<p>{{ profile_info.email }}</p>
 												</div>
 												<div class="clearfix"></div>
 											</div>
 											<div class="clearfix"></div>
 											<div class="detail-row">
 												<div class="col-md-6 col-sm-12 col-xs-6 clear-padding">
-													<span>ROLL NO</span>
-													<p>PTH030A10</p>
+													<span>DATE OF BIRTH</span>
+													<p>{{ profile_info.date_birth }}</p>
+												</div>
+												<div class="col-md-6 col-sm-12 col-xs-6 clear-padding">
+													<span>RELIGION</span>
+													<p>{{ profile_info.religion }}</p>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="clearfix"></div>
+											<div class="detail-row">
+												<div class="col-md-6 col-sm-12 col-xs-6 clear-padding">
+													<span>GENDER</span>
+													<p>{{ profile_info.gender }}</p>
 												</div>
 												<div class="col-md-6 col-sm-12 col-xs-6 clear-padding">
 													<span>SECTION</span>
@@ -160,29 +163,20 @@
 										<h6 class="item-title"><i class="fa fa-envelope-o"></i>MY MESSAGES</h6>
 										<div class="inner-item">
 											<div class="msg-item">
+                                                {% for message in messages %}
 												<div class="col-xs-2 clear-padding">
-													<img src="{% static 'img/parent/parent1.jpg' %}" alt="user" />
+													<img src="{{ message.sender|convert_id_img }}" alt="user" />
 												</div>
 												<div class="col-xs-10">
-													<p class="title">Submit your assigment.</p>
-													<p class="sent-by">JOHN DOE, MATH TEACHER</p>
-													<p class="msg-desc">Lorem Ipsum is simply dummy text of the printing.</p>
-													<p class="timestamp"><i class="fa fa-clock-o"></i> <i>45 mins ago.</i></p>
+													<p class="title">{{ message.message_subject }}.</p>
+													<p class="sent-by">{{ message.sender|convert_id_sender }}</p>
+													<p class="msg-desc">{{ message.message_content }}</p>
+													<p class="timestamp"><i class="fa fa-clock-o"></i> <i>{{ message.created|timesince }} ago.</i></p>
 												</div>
 												<div class="clearfix"></div>
+                                                {% endfor %}
 											</div>
-											<div class="msg-item">
-												<div class="col-xs-2 clear-padding">
-													<img src="{% static 'img/parent/parent2.jpg' %}" alt="user" />
-												</div>
-												<div class="col-xs-10">
-													<p class="title">Your fee is due.</p>
-													<p class="sent-by">LENNORE, ACCOUNTANT</p>
-													<p class="msg-desc">Lorem Ipsum is simply dummy text of the printing.</p>
-													<p class="timestamp"><i class="fa fa-clock-o"></i> <i>45 mins ago.</i></p>
-												</div>
-												<div class="clearfix"></div>
-											</div>
+
 										</div>
 									</div>
 								</div>
@@ -244,41 +238,31 @@
 											<li>								
 												<a href="#2" data-toggle="tab"><i class="fa fa-users"></i><span>ADMISSIONS</span></a>
 											</li>
-											<li>								
-												<a href="#3" data-toggle="tab"><i class="fa fa-trophy"></i><span>SPORTS</span></a>
-											</li>
+
 										</ul>
 										<div class="tab-content">
 											<div class="tab-pane active" id="1">
 												<div class="announcement-item">
-													<h5>Guest lecture on fine arts by Smith.<span class="new">New</span></h5>
-													<h6><i class="fa fa-clock-o"></i>06-24-2017, 13:34</h6>
-													<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-													<div class="posted-by">
-														<p>Thanks,</p>
-														<h6>John Doe, Principal</h6>
-													</div>
+													{% for an_academic in announcement_academic %}
+													<h5>{{ an_academic.an_subject }}  {% if an_academic.date == date %} <span class="new">New</span> {% endif %}</h5>
+													<h6><i class="fa fa-clock-o"></i> {{ an_academic.created }}</h6>
+													<p>{{ an_academic.an_description }}.</p>
+
+                                                    {% endfor %}
 												</div>
-												<div class="announcement-item">
-													<h5>Guest lecture on fine arts by Smith</h5>
-													<h6><i class="fa fa-clock-o"></i>06-24-2017, 13:34</h6>
-													<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-													<div class="posted-by">
-														<p>Thanks,</p>
-														<h6>John Doe, Principal</h6>
-													</div>
-												</div>
+
 											</div>
 											<div class="tab-pane" id="2">
 												<div class="announcement-item">
-													<h5>2</h5>
+													{% for an_admin in announcement_administrative %}
+													<h5>{{ an_admin.an_subject }}.{% if an_admin.date == date %} <span class="new">New</span> {% endif %}</h5>
+													<h6><i class="fa fa-clock-o"></i> {{ an_admin.created }}</h6>
+													<p>{{ an_admin.an_description }}.</p>
+
+                                                    {% endfor %}
 												</div>
 											</div>
-											<div class="tab-pane" id="3">
-												<div class="announcement-item">
-													<h5>3</h5>
-												</div>
-											</div>
+
 										</div>
 									</div>
 								</div>

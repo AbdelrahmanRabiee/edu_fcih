@@ -15,7 +15,8 @@
     <content url="file://$MODULE_DIR$/.." />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="my_resume" />
+    <orderEntry type="module" module-name="multichat" />
+    <orderEntry type="module" module-name="ecommerce" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />

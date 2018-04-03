@@ -31,7 +31,7 @@
 											</div>
 											<div class="col-xs-10">
 												<p class="title">{{ message.message_subject }}</p>
-												<p class="sent-by"> From :{{ message.sender|convert_id_sender }} To: {{ message.reciever|convert_id_reciever}}</p>
+												<p class="sent-by"> From :{{ message.sender }} To: {{ message.reciever|convert_id_reciever}}</p>
 												<p class="msg-desc">{{ message.message_content }}</p>
 												<p class="timestamp"><i class="fa fa-clock-o"></i> <i>{{ message.created|timesince }} ago.</i></p>
 											</div>

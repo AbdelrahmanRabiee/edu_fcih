@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'braces',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,7 +43,8 @@ INSTALLED_APPS = [
     'chat_system',
     'announcement',
     'courses',
-    'student_dashboard'
+    'student_dashboard',
+
 ]
 
 MIDDLEWARE = [

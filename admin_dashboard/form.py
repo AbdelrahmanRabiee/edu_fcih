@@ -1,6 +1,13 @@
 from django import forms
 from .models import Student_profile
-from django.contrib.auth.models import Group
+from django.contrib.auth.models import Group,User
+
+def validate_username(value):
+
+    qs = User.objects.filter(username=value)
+    if qs.exists():
+        raise forms.ValidationError("username already exist")
+    return value
 
 
 def validate_user_name(value):
@@ -15,6 +22,33 @@ def validate_first_name(value):
     if count > 25:
         raise forms.ValidationError(('name must not be more than 5 chars, %(count)s chars is not acceptable !'), params={'count': count},)
 
+class AddAdminForm(forms.Form):
+    user_name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={
+            "placeholder": "Admin ID"
+        }
+    ),validators=[validate_username])
+    first_name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={
+            "placeholder": "First Name"
+        }
+    ))
+    last_name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={
+            "placeholder": "Last Name"
+        }
+    ))
+    email = forms.EmailField(required=True, widget=forms.EmailInput(
+        attrs={
+            "placeholder": "example@example.com"
+        }
+    ))
+
+    password = forms.CharField(required=True,widget=forms.PasswordInput(
+        attrs={
+            "placeholder":"Password"
+        }
+    ))
 
 class AddStudentForm(forms.Form):
     user_name = forms.CharField(required=True, widget=forms.TextInput(

@@ -10,6 +10,7 @@ class Message(models.Model):
     message_subject = models.CharField(max_length=250, null=True, blank=True)
     message_content = models.TextField(max_length=1250, null=True, blank=True)
     created         = models.DateTimeField(null=True, auto_now_add=True)
+    date            = models.DateField(null=True, auto_now_add=True)
 
     def __str__(self):
         return self.message_content

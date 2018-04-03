@@ -4,6 +4,7 @@ from .views import *
 app_name='admin-dashboard'
 urlpatterns = [
         path('',admin_dashboard,name='admin-home'),
+        path('add-admin',add_admin,name='add-admin'),
         path('add-student',add_student,name='add-student'),
         path('add-st-profile',add_student_profile,name='add-st-profile'),
         path('students-list',student_list,name='students-list'),

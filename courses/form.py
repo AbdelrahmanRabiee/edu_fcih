@@ -1,5 +1,5 @@
 from django import forms
-from .models import Course
+from .models import Course,Term
 class AddCourseForm(forms.Form):
     hours_choices = (('2', '2'),
                      ('3', '3'),
@@ -38,3 +38,12 @@ class AddTermForm(forms.Form):
 
     courses = forms.ModelMultipleChoiceField(required=True,
               queryset=Course.objects.all().order_by('-created') )
+
+
+class RegisterCourseForm(forms.Form):
+    hours_choices = (('2', '2'),
+                     ('3', '3'),
+                     )
+    courses = forms.ModelMultipleChoiceField(label='',
+        widget= forms.CheckboxSelectMultiple,queryset=Term.objects.get(active=True).courses.all()
+    )

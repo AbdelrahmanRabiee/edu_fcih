@@ -1,11 +1,20 @@
 from django import forms
+from django.contrib.auth.models import Group
 from admin_dashboard.models import Student_profile,Doctor_profile
 def validate_user_name(value):
-    qs1 = Student_profile.objects.filter(user__username=value)
-    qs2 = Doctor_profile.objects.filter(user__username=value)
-    if not qs1.exists() and not qs2.exists():
-        raise forms.ValidationError("USERNAME NOT FOUND 404")
-    return value
+    admin_value = False
+    admins = Group.objects.get(name="Admins").user_set.all()
+    for admin in admins:
+        if value == admin:
+            admin_value = True
+            return value
+    if not admin_value:
+        qs1 = Student_profile.objects.filter(user__username=value)
+        qs2 = Doctor_profile.objects.filter(user__username=value)
+
+        if not qs1.exists() and not qs2.exists():
+            raise forms.ValidationError("USERNAME NOT FOUND 404")
+        return value
 
 
 class LoginForm(forms.Form):

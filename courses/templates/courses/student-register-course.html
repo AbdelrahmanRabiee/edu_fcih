@@ -1,0 +1,52 @@
+{% extends 'base/dashboard/base_student.html' %}
+{% load static %}
+	{% block content %}
+        <div class="main-content" id="content-wrapper">
+				<div class="container-fluid">
+
+					<div class="row">
+						<div class="col-lg-12 clear-padding-xs">
+							<div class="col-sm-12">
+								<div class="dash-item first-dash-item">
+									<h6 class="item-title"><i class="fa fa-sliders"></i>ALL COURSES</h6>
+									<div class="inner-item">
+                                        <form method="post">
+                                        {% csrf_token %}
+										<table id="attendenceDetailedTable" class="display responsive nowrap" cellspacing="0" width="100%">
+											<thead>
+												<tr>
+													<th><i class="fa fa-book"></i>COURSES</th>
+
+												</tr>
+											</thead>
+											<tbody>
+{#
+                                                    {% for p in form.courses %}
+                                                        <tr>
+                                                        <td> {{ p }}  </td>
+                                                        </tr>
+
+                                                {% endfor %}
+
+
+
+											</tbody>
+										</table>
+
+
+
+                                        <button type="submit">SAVE</button>
+                                        </form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="menu-togggle-btn">
+					<a href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars"></i></a>
+				</div>
+
+
+			</div>
+{% endblock %}

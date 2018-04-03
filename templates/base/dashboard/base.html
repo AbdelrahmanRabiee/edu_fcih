@@ -115,7 +115,7 @@
 							</li>
 							<li>
 								<div class="all-notifications">
-									<a href="#">LOGOUT</a>
+									<a href="{% url 'accounts:logout' %}">LOGOUT</a>
 								</div>
 							</li>
 						</ul>
@@ -129,6 +129,18 @@
 				<ul class="sidebar-nav">
 					<li>
 						<a href="{% url 'admin-dashboard:admin-home' %}"><i class="fa fa-home menu-icon"></i> HOME</a>
+					</li>
+                    <li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="fa fa-users menu-icon"></i> ADMINS <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="{% url 'admin-dashboard:add-admin' %}"><i class="fa fa-caret-right"></i>ADD</a>
+							</li>
+
+						</ul>
+						<div class="clearfix"></div>
 					</li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
