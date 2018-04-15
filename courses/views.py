@@ -8,6 +8,10 @@ from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from braces.views import GroupRequiredMixin
 from django.contrib.auth.models import Group
+from django.views.generic import DetailView
+from django.http import Http404
+from chat_system.models import Message
+from admin_dashboard.models import Student_profile
 
 # Create your views here.
 
@@ -43,8 +47,7 @@ def add_course(request):
                     'notifications': notifications,
                 }
                 return render(request,template_name,context)
-            else:
-                return redirect('accounts:login')
+
     else:
         return redirect('accounts:login')
 class UpdateCourse(GroupRequiredMixin,UpdateView):
@@ -104,10 +107,12 @@ def add_term(request):
                     name        = form.cleaned_data.get('name')
                     description = form.cleaned_data.get('description')
                     courses     = form.cleaned_data.get('courses')
+                    active      = form.cleaned_data.get('active')
 
                     obj=Term.objects.create(
                         name=name,
                         description=description,
+                        active=active
 
                     )
                     for course in courses:
@@ -126,8 +131,7 @@ def add_term(request):
 
                 }
                 return render(request, template_name, context)
-            else:
-                return redirect('accounts:login')
+
     else:
         return redirect('accounts:login')
 
@@ -143,10 +147,26 @@ def display_courses_in_term(request,pk):
                 }
 
                 return render(request,template_name,context)
-            else:
-                return redirect('accounts:login')
+
     else:
         return redirect('accounts:login')
+
+# class DisplayCourses(DetailView):
+#     template_name = 'courses/admin-display-courses.html'
+#
+#     def get_context_data(self, **kwargs):
+#         context  = super(DisplayCourses,self).get_context_data(**kwargs)
+#         return context
+#
+#     def get_object(self, queryset=None, **kwargs):
+#         request = self.request
+#         pk = self.kwargs.get('pk')
+#         instance = Course.objects.get_by_id(pk)
+#         if instance is None:
+#             raise Http404("Sorry this item is not found !")
+#
+#         return instance
+
 
 class UpdateTerm(GroupRequiredMixin,UpdateView):
     group_required = u"Admins"
@@ -158,6 +178,7 @@ class UpdateTerm(GroupRequiredMixin,UpdateView):
         'name',
         'description',
         'courses',
+        'active'
     ]
     template_name = 'courses/admin-term-update.html'
     success_url = reverse_lazy('courses:add_term')
@@ -200,30 +221,43 @@ class DeleteTerm(GroupRequiredMixin,DeleteView):
 
 def register_course(request):
     if request.user.is_authenticated:
-        admins = Group.objects.get(name="Admins").user_set.all()
-        for admin in admins:
+        students = Group.objects.get(name="Students").user_set.all()
+        for admin in students:
             if request.user == admin:
-                form = RegisterCourseForm(request.POST or None)
-                if form.is_valid():
-                    courses = form.cleaned_data.get('courses')
-                    for course in courses:
-                        obj = Course.objects.get(name=course)
-                        print(obj.pk)
-                        subject = get_object_or_404(Course, pk=obj.pk)
+                term = Term.objects.filter(active=True)
+                if term.exists():
+                    print('term exist')
+                    form = RegisterCourseForm(request.POST or None)
+                    print('form exist')
+                    if form.is_valid():
+                        courses = form.cleaned_data.get('courses')
 
-                        user = User.objects.get(username='20161830')
-                        subject.student.add(user)
-                        subject.save()
+                        for course in courses:
 
-                term_courses = Term.objects.get(active=True).courses.all()
+                            obj = Course.objects.get(name=course)
 
-                template_name = 'courses/student-register-course.html'
-                context = {
-                    'term_courses':term_courses,
-                    'form':form
-                }
-                return render(request, template_name, context)
-            else:
-                return redirect('accounts:login')
+                            subject = get_object_or_404(Course, pk=obj.pk)
+
+                            user = User.objects.get(username=request.user)
+                            subject.student.add(user)
+                            subject.save()
+
+
+
+                    messages_count_today = Message.objects.filter(reciever__username=request.user).filter(date=datetime.date.today()).count()
+                    profile_info = Student_profile.objects.get(user__username=request.user)
+
+                    template_name = 'courses/student-register-course.html'
+                    context = {
+
+                        'form':form,
+                        'messages_count_today': messages_count_today,
+                        'profile_info': profile_info,
+
+                    }
+                    return render(request, template_name, context)
+                else:
+                    return redirect('student-dashboard:student-home')
+
     else:
         return redirect('accounts:login')

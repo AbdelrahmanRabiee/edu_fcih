@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 {% load static %}
+{% load app_filters %}
+{% load convert_id_img %}
 <head>
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,13 +20,10 @@
     <body>
 <div class="row dashboard-top-nav">
 			<div class="col-sm-3 logo">
-				<h5><i class="fa fa-book"></i>PATHSHALA</h5>
+				<h5><i class="fa fa-book"></i><a href="{% url 'student-dashboard:student-home' %}" >EDU FCIH</a></h5>
 			</div>
-			<div class="col-sm-4 top-search">
-				<div class="search">
-					<i class="fa fa-search"></i>
-					<input type="text" placeholder="Search">
-				</div>
+			<div class="col-sm-4 ">
+
 			</div>
 			<div class="col-sm-5 notification-area">
 				<ul class="top-nav-list">
@@ -92,59 +91,52 @@
 					<li class="message dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 							<i class="fa fa-comment-o"></i>
-							<span class="badge nav-badge">5</span>
+							<span class="badge nav-badge">{{ messages_count_today }}</span>
 						</a>
 						<ul class="dropdown-menu notification-list">
-							<li>
+							{% for message in messages %}
+                            <li>
 								<div class="list-msg">
+
 									<div class="col-xs-2 image clear-padding">
-										<img src="{% static 'img/parent/parent2.jpg' %}" alt="user" />
+										<img src="{{ message.sender|convert_id_img }}" alt="user" />
 									</div>
 									<div class="col-sm-10 desc">
-										<h5><a href="#">John Doe</a></h5>
-										<p>Lorem Ipsum is simply dummy text.</p>
-										<h6><i class="fa fa-clock-o"></i> 1 day ago</h6>
+										<h5><a href="#">{{ message.sender|convert_id_sender }}</a></h5>
+										<p>{{ message.message_subject }}.</p>
+										<h6><i class="fa fa-clock-o"></i> {{ message.created|timesince }} ago</h6>
 									</div>
 									<div class="clearfix"></div>
+
 								</div>
 							</li>
-							<li>
-								<div class="list-msg">
-									<div class="col-xs-2 image clear-padding">
-										<img src="{% static 'img/parent/parent1.jpg' %}" alt="user" />
-									</div>
-									<div class="col-sm-10 desc">
-										<h5><a href="#">Lenore Doe</a></h5>
-										<p>Lorem Ipsum is simply dummy text.</p>
-										<h6><i class="fa fa-clock-o"></i> 1 day ago</h6>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							</li>
+                            {% endfor %}
+
 							<li>
 								<div class="all-notifications">
-									<a href="#">VIEW ALL MESSAGES</a>
+									<a href="{% url 'student-dashboard:send-message' %}">VIEW ALL MESSAGES</a>
 								</div>
 							</li>
 						</ul>
 					</li>
 					<li class="user dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							<span><img src="{% static 'img/parent/parent2.jpg' %}" alt="user">JOHN DOE<span class="caret"></span></span>
-						</a>
+                            {% if profile_info.img %}
+							<span><img src="{{ profile_info.img.url }}" alt="user">{{ request.user|convert_id_sender }}<span class="caret"></span></span>
+						    {% else %}
+                            <span><img src="ss/ss.jpg" alt="user">{{ request.user|convert_id_sender }}<span class="caret"></span></span>
+
+                            {% endif %}
+                        </a>
 						<ul class="dropdown-menu notification-list">
+
 							<li>
-								<a href="#"><i class="fa fa-cogs"></i> SETTINGS</a>
+								<a href="{% url 'student-dashboard:student-home' %}"><i class="fa fa-users"></i> MY PROFILE</a>
 							</li>
 							<li>
-								<a href="#"><i class="fa fa-users"></i> USER PROFILE</a>
+								<a href="{% url 'accounts:st-change-password' %}"><i class="fa fa-key"></i> CHANGE PASSWORD</a>
 							</li>
-							<li>
-								<a href="#"><i class="fa fa-key"></i> CHANGE PASSWORD</a>
-							</li>
-							<li>
-								<a href="#"><i class="fa fa-cogs"></i> SETTINGS</a>
-							</li>
+
 							<li>
 								<div class="all-notifications">
 									<a href="{% url 'accounts:logout' %}">LOGOUT</a>
@@ -161,7 +153,7 @@
 			<div class="sidebar-nav-wrapper" id="sidebar-wrapper">
 				<ul class="sidebar-nav">
 					<li>
-						<a href="student-dashboard.html"><i class="fa fa-home menu-icon"></i> HOME</a>
+						<a href="{% url 'student-dashboard:student-home' %}"><i class="fa fa-home menu-icon"></i> HOME</a>
 					</li>
                     <li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -169,7 +161,7 @@
 						</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="student-assignment-download.html"><i class="fa fa-caret-right"></i>REGISTER</a>
+								<a href="{% url 'student-dashboard:register-courses' %}"><i class="fa fa-caret-right"></i>REGISTER</a>
 							</li>
 
 						</ul>
@@ -204,7 +196,7 @@
 						<div class="clearfix"></div>
 					</li>
 					<li>
-						<a href="message.html"><i class="fa fa-envelope menu-icon"></i> MY MESSAGES</a>
+						<a href="{% url 'student-dashboard:send-message' %}"><i class="fa fa-envelope menu-icon"></i> MY MESSAGES</a>
 					</li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">

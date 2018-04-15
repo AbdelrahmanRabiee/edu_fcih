@@ -3,6 +3,7 @@
 {% load app_filters %}
 {% load convert_id_reciever %}
 {% load convert_id_img %}
+{% load convert_ids_form %}
 	{% block content %}
 
 
@@ -31,7 +32,7 @@
 											</div>
 											<div class="col-xs-10">
 												<p class="title">{{ message.message_subject }}</p>
-												<p class="sent-by"> From :{{ message.sender }} To: {{ message.reciever|convert_id_reciever}}</p>
+												<p class="sent-by"> From :{{ message.sender|convert_id_sender }} To: {{ message.reciever|convert_id_reciever}}</p>
 												<p class="msg-desc">{{ message.message_content }}</p>
 												<p class="timestamp"><i class="fa fa-clock-o"></i> <i>{{ message.created|timesince }} ago.</i></p>
 											</div>
@@ -48,6 +49,12 @@
 									<div class="inner-item">
                                         <form action="" method="post">
                                             {% csrf_token %}
+                                            <div class="form_errors">
+                                                {% if form.errors %}
+                                                    <h5>{{ form.message_subject.errors }}</h5>
+                                                    <h5>{{ form.message_content.errors }}</h5>
+                                                {% endif %}
+                                            </div>
 										<div class="dash-form">
 											<div class="col-xs-6">
 												<label class="clear-top-margin"><i class="fa fa-user-circle-o"></i>DOCTOR</label>
@@ -55,7 +62,7 @@
 											</div>
 											<div class="col-xs-6">
 												<label class="clear-top-margin"><i class="fa fa-user-circle-o"></i>STUDENT</label>
-												{{ form.reciever_student }}
+												{{ form.reciever_student|convert_ids_form }}
 											</div>
 											<div class="clearfix"></div>
 											<div class="col-sm-12">

@@ -19,8 +19,16 @@
 										<div class="dash-form">
                                             <form  method="post" enctype="multipart/form-data" >
                                                 {% csrf_token %}
+                                                <div class="form_errors">
+                                                {% if form.errors %}
+                                                    <h5>{{ form.user_name.errors }}</h5>
+                                                    <h5>{{ form.first_name.errors }}</h5>
+                                                    <h5>{{ form.last_name.errors }}</h5>
+                                                    <h5>{{ form.phone.errors }}</h5>
+                                                    <h5>{{ form.email.errors }}</h5>
+                                                {% endif %}
+                                            </div>
 											<div class="col-sm-3">
-                                            {{ form.user_name.errors }}
 												<label class="clear-top-margin"><i class="fa fa-user-circle-o"></i>STUDENT ID</label>
 
 {#                                                <select name="user_name">#}
@@ -32,7 +40,6 @@
 
 											</div>
 											<div class="col-sm-3">
-                                                {{ form.first_name.errors }}
 												<label class="clear-top-margin"><i class="fa fa-user-circle-o"></i>FIRST NAME</label>
 												{{ form.first_name }}
 											</div>

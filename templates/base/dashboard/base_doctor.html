@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+{% load static %}
+{% load app_filters %}
+{% load convert_id_img %}
+<html>
+
+<head>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="">
+        <title>EDU FCIH</title>
+
+        <!-- Styles -->
+        {% include 'base/dashboard/static/css.html' %}
+
+        <!-- Fonts -->
+        {% include 'base/dashboard/static/fonts.html' %}
+    </head>
+    <body>
+		<div class="row dashboard-top-nav">
+			<div class="col-sm-3 logo">
+				<h5><i class="fa fa-book"></i><a href="{% url 'doctor-dashboard:doctor-home' %}">EDU FCIH</h5>
+			</div>
+			<div class="col-sm-4 ">
+
+			</div>
+			<div class="col-sm-5 notification-area">
+				<ul class="top-nav-list">
+					<li class="notification dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="fa fa-bell-o"></i>
+							<span class="badge nav-badge">3</span>
+						</a>
+						<ul class="dropdown-menu notification-list">
+							<li>
+								<div class="list-msg">
+									<div class="col-xs-2 icon clear-padding">
+										<i class="fa fa-trophy"></i>
+									</div>
+									<div class="col-sm-10 desc">
+										<h5><a href="#">Upcoming Sports Meet</a></h5>
+										<h6><i class="fa fa-clock-o"></i> 10 min ago</h6>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</li>
+							<li>
+								<div class="list-msg">
+									<div class="col-xs-2 icon clear-padding">
+										<i class="fa fa-paint-brush"></i>
+									</div>
+									<div class="col-sm-10 desc">
+										<h5><a href="#">Fine art workshop</a></h5>
+										<h6><i class="fa fa-clock-o"></i> 1 hour ago</h6>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</li>
+							<li>
+								<div class="list-msg">
+									<div class="col-xs-2 icon clear-padding">
+										<i class="fa fa-birthday-cake"></i>
+									</div>
+									<div class="col-sm-10 desc">
+										<h5><a href="#">Annual fest</a></h5>
+										<h6><i class="fa fa-clock-o"></i> 1 day ago</h6>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</li>
+							<li>
+								<div class="list-msg">
+									<div class="col-xs-2 icon clear-padding">
+										<i class="fa fa-trophy"></i>
+									</div>
+									<div class="col-sm-10 desc">
+										<h5><a href="#">Upcoming Sports Meet</a></h5>
+										<h6><i class="fa fa-clock-o"></i> 10 min ago</h6>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</li>
+							<li>
+								<div class="all-notifications">
+									<a href="#">VIEW ALL NOTIFICATIONS</a>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li class="message dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="fa fa-comment-o"></i>
+							<span class="badge nav-badge">{{ messages_count_today }}</span>
+						</a>
+						<ul class="dropdown-menu notification-list">
+							{% for message in messages %}
+                            <li>
+								<div class="list-msg">
+
+									<div class="col-xs-2 image clear-padding">
+										<img src="{{ message.sender|convert_id_img }}" alt="user" />
+									</div>
+									<div class="col-sm-10 desc">
+										<h5><a href="#">{{ message.sender|convert_id_sender }}</a></h5>
+										<p>{{ message.message_subject }}.</p>
+										<h6><i class="fa fa-clock-o"></i> {{ message.created|timesince }} ago</h6>
+									</div>
+									<div class="clearfix"></div>
+
+								</div>
+							</li>
+                            {% endfor %}
+
+							<li>
+								<div class="all-notifications">
+									<a href="{% url 'doctor-dashboard:send-message' %}">VIEW ALL MESSAGES</a>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li class="user dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                {% if profile_info.img %}
+							<span><img src="{{ profile_info.img.url }}" alt="user">{{ request.user|convert_id_sender }}<span class="caret"></span></span>
+						    {% else %}
+                            <span><img src="ss/ss.jpg" alt="user">{{ request.user|convert_id_sender }}<span class="caret"></span></span>
+
+                            {% endif %}						</a>
+						<ul class="dropdown-menu notification-list">
+
+							<li>
+								<a href="#"><i class="fa fa-users"></i> USER PROFILE</a>
+							</li>
+							<li>
+								<a href="{% url 'accounts:doc-change-password' %}"><i class="fa fa-key"></i> CHANGE PASSWORD</a>
+							</li>
+							<li>
+								<div class="all-notifications">
+									<a href="{% url 'accounts:logout' %}">LOGOUT</a>
+								</div>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="parent-wrapper" id="outer-wrapper">
+			<!-- SIDE MENU -->
+			<div class="sidebar-nav-wrapper" id="sidebar-wrapper">
+				<ul class="sidebar-nav">
+					<li>
+						<a href="{% url 'doctor-dashboard:doctor-home' %}"><i class="fa fa-home menu-icon"></i> HOME</a>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="fa fa-file-code-o menu-icon"></i> ASSIGNMENTS <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="teacher-create-assignment.html"><i class="fa fa-caret-right"></i>CREATE</a>
+							</li>
+							<li>
+								<a href="teacher-assignment-download.html"><i class="fa fa-caret-right"></i>DOWNLOAD</a>
+							</li>
+						</ul>
+						<div class="clearfix"></div>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="fa fa-bar-chart menu-icon"></i> ATTENDENCE <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="teacher-mark-student-attendence.html"><i class="fa fa-caret-right"></i>MARK</a>
+							</li>
+							<li>
+								<a href="teacher-view-student-attendence.html"><i class="fa fa-caret-right"></i>VIEW</a>
+							</li>
+						</ul>
+						<div class="clearfix"></div>
+					</li>
+					<li>
+						<a href="{% url 'doctor-dashboard:send-message' %}"><i class="fa fa-envelope menu-icon"></i> MY MESSAGES</a>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="fa fa-address-card menu-icon"></i> MARKS <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="teacher-add-student-marks.html"><i class="fa fa-caret-right"></i>CREATE</a>
+							</li>
+							<li>
+								<a href="teacher-view-student-marks.html"><i class="fa fa-caret-right"></i>VIEW</a>
+							</li>
+						</ul>
+						<div class="clearfix"></div>
+					</li>
+					<li>
+						<a href="teacher-timetable.html"><i class="fa fa-calendar menu-icon"></i> TIME TABLE</a>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="fa fa-address-card menu-icon"></i> REPORTS <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="teacher-attendence-report.html"><i class="fa fa-caret-right"></i>ATTENDENCE</a>
+							</li>
+							<li>
+								<a href="teacher-marks-report.html"><i class="fa fa-caret-right"></i>MARKS</a>
+							</li>
+						</ul>
+						<div class="clearfix"></div>
+					</li>
+				</ul>
+			</div>
+
+			<!-- MAIN CONTENT -->
+			{% block content %}
+            {% endblock %}
+		</div>
+
+		<!-- Scripts -->
+        {% include 'base/dashboard/static/js.html' %}
+    </body>
+
+</html>

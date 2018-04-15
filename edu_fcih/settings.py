@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'announcement',
     'courses',
     'student_dashboard',
+    'doctor_dashboard',
+
 
 ]
 

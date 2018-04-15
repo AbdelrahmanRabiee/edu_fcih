@@ -42,9 +42,8 @@ def admin_dashboard(request):
                 }
 
                 return render(request,template_name,context)
-            else:
-                return redirect('accounts:login')
-
+        else:
+            return redirect('accounts:login')
     else:
         return redirect('accounts:login')
 
@@ -79,8 +78,8 @@ def add_admin(request):
                 }
                 return render(request,template_name,context)
 
-            else:
-                return redirect('accounts:login')
+        else:
+            return redirect('accounts:login')
 
     else:
         return redirect('accounts:login')
@@ -94,8 +93,8 @@ def add_student(request):
                 form = AddStudentForm(request.POST or None)
                 if form.is_valid():
                     user_name = form.cleaned_data.get('user_name')
-                    password = form.cleaned_data.get('password')
-                    User.objects.create(
+                    password  = form.cleaned_data.get('password')
+                    User.objects.create_user(
                         username=user_name,
                         password=password
                     )
@@ -112,8 +111,9 @@ def add_student(request):
                         'count':count
                 }
                 return render(request,template_name,context)
-            else:
-                return redirect('accounts:login')
+        else:
+            return redirect('accounts:login')
+
 
     else:
         return redirect('accounts:login')
@@ -169,8 +169,9 @@ def add_student_profile(request):
                     'count': count
                 }
                 return render(request,template_name,context)
-            else:
-                return redirect('accounts:login')
+        else:
+            return redirect('accounts:login')
+
     else:
         return redirect('accounts:login')
 
@@ -191,8 +192,9 @@ def student_list(request):
 
                 }
                 return render(request,template_name,context)
-            else:
-                return redirect('accounts:login')
+        else:
+            return redirect('accounts:login')
+
     else:
         return redirect('accounts:login')
 
@@ -253,7 +255,7 @@ def add_doctor(request):
                 if form.is_valid():
                     user_name = form.cleaned_data.get('user_name')
                     password = form.cleaned_data.get('password')
-                    User.objects.create(
+                    User.objects.create_user(
                         username=user_name,
                         password=password
                     )
@@ -271,8 +273,9 @@ def add_doctor(request):
                     'count': count
                 }
                 return render(request,template_name,context)
-            else:
-                return redirect('accounts:login')
+        else:
+            return redirect('accounts:login')
+
     else:
         return redirect('accounts:login')
 
@@ -339,8 +342,9 @@ def add_doctor_profile(request):
                     'count': count
                 }
                 return render(request,template_name,context)
-            else:
-                return redirect('accounts:login')
+        else:
+            return redirect('accounts:login')
+
     else:
         return redirect('accounts:login')
 
@@ -362,8 +366,9 @@ def doctor_list(request):
 
                 }
                 return render(request,template_name,context)
-            else:
-                return redirect('accounts:login')
+        else:
+            return redirect('accounts:login')
+
 
     else:
         return redirect('accounts:login')

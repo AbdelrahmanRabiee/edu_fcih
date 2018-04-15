@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 import random
 import os
-from django.db.models.signals import post_delete
+from django.db.models.signals import post_delete,pre_save,post_save
 from django.dispatch import receiver
 
 # Create your models here.
@@ -46,8 +46,8 @@ class Student_profile(models.Model):
                      )
 
     user        = models.OneToOneField(User,on_delete=models.CASCADE,primary_key=True,)
-    first_name = models.CharField(max_length=50,null=True,blank=True)
-    last_name = models.CharField(max_length=50, null=True, blank=True)
+    first_name  = models.CharField(max_length=50,null=True,blank=True)
+    last_name   = models.CharField(max_length=50, null=True, blank=True)
     gender      = models.CharField(max_length=50, null=True, blank=True,choices=gender_choices)
     date_birth  = models.DateField(null=True, blank=True)
     phone       = models.CharField(max_length=50, null=True, blank=True)
@@ -95,9 +95,16 @@ class Doctor_profile(models.Model):
 
 
 @receiver(post_delete,sender=Student_profile)
-def delete_user(sender,instance,**kwargs):
-    user = User.objects.get(username=instance.user)
-    user.delete()
+def delete_student(sender,instance,**kwargs):
+        user = User.objects.get(username=instance.user)
+        user.delete()
+
+# @receiver(post_save,sender=Student_profile)
+# def delete_user(sender,created,instance,**kwargs):
+#     if created:
+#         print('yes')
+#         # user = User.objects.get(username=instance.user)
+#         # user.delete()
 
 @receiver(post_delete,sender=Doctor_profile)
 def delete_user(sender,instance,**kwargs):

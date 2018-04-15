@@ -32,7 +32,9 @@ urlpatterns += [
         path('admin/announcement/',include('announcement.urls',namespace='announcement')),
         path('admin/course/',include('courses.urls',namespace='courses')),
         path('student/',include('student_dashboard.urls',namespace='student-dashboard')),
-        path('',index)
+        path('doctor/',include('doctor_dashboard.urls',namespace='doctor-dashboard')),
+        path('',index),
+
 
 ]
 

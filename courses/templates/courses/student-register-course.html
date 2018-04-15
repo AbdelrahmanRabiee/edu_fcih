@@ -12,6 +12,9 @@
 									<div class="inner-item">
                                         <form method="post">
                                         {% csrf_token %}
+                                        {% if form.errors %}
+                                            <h3>{{ form.courses.errors }}</h3>
+                                        {% endif %}
 										<table id="attendenceDetailedTable" class="display responsive nowrap" cellspacing="0" width="100%">
 											<thead>
 												<tr>
@@ -20,10 +23,10 @@
 												</tr>
 											</thead>
 											<tbody>
-{#
-                                                    {% for p in form.courses %}
+
+                                                    {% for course in form.courses %}
                                                         <tr>
-                                                        <td> {{ p }}  </td>
+                                                        <td> {{ course }}  </td>
                                                         </tr>
 
                                                 {% endfor %}

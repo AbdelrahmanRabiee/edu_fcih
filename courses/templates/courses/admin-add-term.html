@@ -15,6 +15,7 @@
 								<div class="dash-item first-dash-item">
 									<h6 class="item-title"><i class="fa fa-plus-circle"></i>ADD TERM</h6>
 									<div class="inner-item">
+                                        {{ form.active.errors }}
                                         <form method="post">
                                             {% csrf_token %}
 										<div class="dash-form">
@@ -24,6 +25,8 @@
 											{{ form.description }}
 											<label><i class="fa fa-user-secret"></i>TERM COURSES</label>
 											{{ form.courses }}
+                                            <label><i class="fa fa-user-secret"></i>ACTIVE ?</label>
+											{{ form.active }}
                                             <div class="clearfix"></div>
                                             <br>
 											<div>

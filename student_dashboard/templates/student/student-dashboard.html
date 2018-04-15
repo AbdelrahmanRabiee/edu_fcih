@@ -71,7 +71,7 @@
 									<div class="stat-item">
 										<div class="stats">
 											<div class="col-xs-8 count">
-												<h1>799</h1>
+												<h1>{{ messages_count }}</h1>
 												<p>MESSAGES</p>
 											</div>
 											<div class="col-xs-4 icon">
@@ -108,7 +108,9 @@
 									<div class="inner-item">
 										<div class="profile-intro">
 											<div class="col-xs-4 col-sm-12 col-md-4 clear-padding">
+                                                {% if profile_info.img %}
 												<img src="{{ profile_info.img.url }}" alt="user" />
+                                                {% endif %}
 											</div>
 											<div class="col-xs-8 col-sm-12 col-md-8">
 												<h5>{{ profile_info.first_name }} {{ profile_info.last_name }}</h5>
@@ -147,10 +149,7 @@
 													<span>GENDER</span>
 													<p>{{ profile_info.gender }}</p>
 												</div>
-												<div class="col-md-6 col-sm-12 col-xs-6 clear-padding">
-													<span>SECTION</span>
-													<p>PTH030A</p>
-												</div>
+
 												<div class="clearfix"></div>
 											</div>
 										</div>
@@ -165,6 +164,7 @@
 											<div class="msg-item">
                                                 {% for message in messages %}
 												<div class="col-xs-2 clear-padding">
+
 													<img src="{{ message.sender|convert_id_img }}" alt="user" />
 												</div>
 												<div class="col-xs-10">
@@ -184,39 +184,29 @@
 							<div class="col-sm-4">
 								<div>
 									<div class="my-msg dash-item">
-										<h6 class="item-title"><i class="fa fa-calendar"></i>TODAY'S TIMETABLE</h6>
+										<h6 class="item-title"><i class="fa fa-book"></i>REGISTERED COURSES</h6>
 										<div class="inner-item">
+                                            {% if registered_courses %}
+                                            {% for course in registered_courses %}
 											<div class="timetable-item">
-												<div class="col-xs-3 clear-padding">
-													<p><span class="time">10 AM</span></p>
-												</div>
+
 												<div class="col-xs-9">
-													<p class="title">Mathematics (MTH101)</p>
-													<p class="sent-by"><i class="fa fa-map-marker"></i> ROOM NO - 601</p>
-													<p class="class-teacher"><i class="fa fa-user"></i> JOHN DOE</p>
+													<p class="title"><i class="fa fa-check-circle-o "></i>  {{ course.name }}</p>
 												</div>
 												<div class="clearfix"></div>
 											</div>
-											<div class="timetable-item">
-												<div class="col-xs-3 clear-padding">
-													<p><span class="time">11 AM</span></p>
-												</div>
+                                            {% endfor %}
+                                                {% else %}
+                                                <div class="timetable-item">
+
 												<div class="col-xs-9">
-													<p class="title">Physics (PHY202)</p>
-													<p class="sent-by"><i class="fa fa-map-marker"></i> ROOM NO - 601</p>
-													<p class="class-teacher"><i class="fa fa-user"></i> JOHN DOE</p>
+													<p class="title"><i class="fa fa-check-circle-o "></i>  NO AVAILABLE COURSES</p>
 												</div>
 												<div class="clearfix"></div>
 											</div>
-											<div class="timetable-item">
-												<div class="col-xs-3 clear-padding">
-													<p><span class="time">12 PM</span></p>
-												</div>
-												<div class="col-xs-9">
-													<p class="title">Biology (BIO101)</p>
-													<p class="sent-by"><i class="fa fa-map-marker"></i> ROOM NO - 601</p>
-													<p class="class-teacher"><i class="fa fa-user"></i> JOHN DOE</p>
-												</div>
+                                            {% endif %}
+
+
 												<div class="clearfix"></div>
 											</div>
 										</div>

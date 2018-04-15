@@ -16,6 +16,12 @@
 									<h6 class="item-title"><i class="fa fa-plus-circle"></i>ADD ANNOUNCEMENT</h6>
 									<div class="inner-item">
                                         <form method="post"> {% csrf_token %}
+                                            <div class="form_errors">
+                                                {% if form.errors %}
+                                                    <h5>{{ form.an_subject.errors }}</h5>
+                                                    <h5>{{ form.an_description.errors }}</h5>
+                                                {% endif %}
+                                            </div>
 										<div class="dash-form">
 											<label class="clear-top-margin"><i class="fa fa-cogs"></i>TYPE</label>
 											{{ form.an_type }}

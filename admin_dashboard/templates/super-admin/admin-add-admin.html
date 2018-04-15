@@ -18,6 +18,15 @@
 									<div class="inner-item">
                                         <form method="post">
                                             {% csrf_token %}
+                                            <div class="form_errors">
+                                                {% if form.errors %}
+                                                    <h5>{{ form.user_name.errors }}</h5>
+                                                    <h5>{{ form.first_name.errors }}</h5>
+                                                    <h5>{{ form.last_name.errors }}</h5>
+                                                    <h5>{{ form.email.errors }}</h5>
+                                                    <h5>{{ form.password.errors }}</h5>
+                                                {% endif %}
+                                            </div>
 										<div class="dash-form">
 											<div class="col-sm-3">
 												<label class="clear-top-margin"><i class="fa fa-user-circle-o"></i>Admin ID</label>

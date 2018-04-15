@@ -2,28 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2237f34-3150-44b8-b70c-ccab267e5464" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-add-admin.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../accounts/templates/auth/doc_change_password.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../accounts/templates/auth/st_change_password.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../chat_system/templates/messages/doctor_message.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../chat_system/templates/messages/studen_message.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../doctor_dashboard/form.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../doctor_dashboard/urls.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../student_dashboard/templatetags-edit/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../templates/base/dashboard/base_doctor.html" />
       <change beforePath="$PROJECT_DIR$/../.idea/edu_fcih.iml" afterPath="$PROJECT_DIR$/../.idea/edu_fcih.iml" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" afterPath="$PROJECT_DIR$/../.idea/modules.xml" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/../accounts/forms.py" afterPath="$PROJECT_DIR$/../accounts/forms.py" />
+      <change beforePath="$PROJECT_DIR$/../accounts/urls.py" afterPath="$PROJECT_DIR$/../accounts/urls.py" />
       <change beforePath="$PROJECT_DIR$/../accounts/views.py" afterPath="$PROJECT_DIR$/../accounts/views.py" />
       <change beforePath="$PROJECT_DIR$/../admin_dashboard/form.py" afterPath="$PROJECT_DIR$/../admin_dashboard/form.py" />
-      <change beforePath="$PROJECT_DIR$/../admin_dashboard/urls.py" afterPath="$PROJECT_DIR$/../admin_dashboard/urls.py" />
+      <change beforePath="$PROJECT_DIR$/../admin_dashboard/models.py" afterPath="$PROJECT_DIR$/../admin_dashboard/models.py" />
+      <change beforePath="$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-add-admin.html" afterPath="$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-add-admin.html" />
+      <change beforePath="$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-add-doctor-profile.html" afterPath="$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-add-doctor-profile.html" />
+      <change beforePath="$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-add-doctor.html" afterPath="$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-add-doctor.html" />
+      <change beforePath="$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-add-student-profile.html" afterPath="$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-add-student-profile.html" />
+      <change beforePath="$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-add-student.html" afterPath="$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-add-student.html" />
+      <change beforePath="$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-doctor-update.html" afterPath="$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-doctor-update.html" />
+      <change beforePath="$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-student-update.html" afterPath="$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-student-update.html" />
       <change beforePath="$PROJECT_DIR$/../admin_dashboard/views.py" afterPath="$PROJECT_DIR$/../admin_dashboard/views.py" />
-      <change beforePath="$PROJECT_DIR$/../announcement/views.py" afterPath="$PROJECT_DIR$/../announcement/views.py" />
-      <change beforePath="$PROJECT_DIR$/../chat_system/models.py" afterPath="$PROJECT_DIR$/../chat_system/models.py" />
+      <change beforePath="$PROJECT_DIR$/../announcement/form.py" afterPath="$PROJECT_DIR$/../announcement/form.py" />
+      <change beforePath="$PROJECT_DIR$/../announcement/templates/announcement/admin-add-announcement.html" afterPath="$PROJECT_DIR$/../announcement/templates/announcement/admin-add-announcement.html" />
+      <change beforePath="$PROJECT_DIR$/../announcement/templates/announcement/admin-announcement-update.html" afterPath="$PROJECT_DIR$/../announcement/templates/announcement/admin-announcement-update.html" />
+      <change beforePath="$PROJECT_DIR$/../chat_system/form.py" afterPath="$PROJECT_DIR$/../chat_system/form.py" />
       <change beforePath="$PROJECT_DIR$/../chat_system/templates/messages/message.html" afterPath="$PROJECT_DIR$/../chat_system/templates/messages/message.html" />
       <change beforePath="$PROJECT_DIR$/../chat_system/templatetags/app_filters.py" afterPath="$PROJECT_DIR$/../chat_system/templatetags/app_filters.py" />
+      <change beforePath="$PROJECT_DIR$/../chat_system/templatetags/convert_id_reciever.py" afterPath="$PROJECT_DIR$/../chat_system/templatetags/convert_id_reciever.py" />
       <change beforePath="$PROJECT_DIR$/../chat_system/views.py" afterPath="$PROJECT_DIR$/../chat_system/views.py" />
       <change beforePath="$PROJECT_DIR$/../courses/form.py" afterPath="$PROJECT_DIR$/../courses/form.py" />
-      <change beforePath="$PROJECT_DIR$/../courses/models.py" afterPath="$PROJECT_DIR$/../courses/models.py" />
-      <change beforePath="$PROJECT_DIR$/../courses/urls.py" afterPath="$PROJECT_DIR$/../courses/urls.py" />
+      <change beforePath="$PROJECT_DIR$/../courses/templates/courses/admin-add-term.html" afterPath="$PROJECT_DIR$/../courses/templates/courses/admin-add-term.html" />
+      <change beforePath="$PROJECT_DIR$/../courses/templates/courses/admin-term-update.html" afterPath="$PROJECT_DIR$/../courses/templates/courses/admin-term-update.html" />
+      <change beforePath="$PROJECT_DIR$/../courses/templates/courses/student-register-course.html" afterPath="$PROJECT_DIR$/../courses/templates/courses/student-register-course.html" />
       <change beforePath="$PROJECT_DIR$/../courses/views.py" afterPath="$PROJECT_DIR$/../courses/views.py" />
       <change beforePath="$PROJECT_DIR$/../db.sqlite3" afterPath="$PROJECT_DIR$/../db.sqlite3" />
       <change beforePath="$PROJECT_DIR$/../edu_fcih/settings.py" afterPath="$PROJECT_DIR$/../edu_fcih/settings.py" />
+      <change beforePath="$PROJECT_DIR$/../edu_fcih/urls.py" afterPath="$PROJECT_DIR$/../edu_fcih/urls.py" />
       <change beforePath="$PROJECT_DIR$/../student_dashboard/templates/student/student-dashboard.html" afterPath="$PROJECT_DIR$/../student_dashboard/templates/student/student-dashboard.html" />
+      <change beforePath="$PROJECT_DIR$/../student_dashboard/templatetags/__init__.py" afterPath="$PROJECT_DIR$/../chat_system/templatetags/convert_ids_form.py" />
+      <change beforePath="$PROJECT_DIR$/../student_dashboard/templatetags/app_filters.py" afterPath="$PROJECT_DIR$/../student_dashboard/templatetags-edit/app_filters.py" />
+      <change beforePath="$PROJECT_DIR$/../student_dashboard/templatetags/convert_id_img.py" afterPath="$PROJECT_DIR$/../student_dashboard/templatetags-edit/convert_id_img.py" />
+      <change beforePath="$PROJECT_DIR$/../student_dashboard/templatetags/convert_id_reciever.py" afterPath="$PROJECT_DIR$/../student_dashboard/templatetags-edit/convert_id_reciever.py" />
       <change beforePath="$PROJECT_DIR$/../student_dashboard/urls.py" afterPath="$PROJECT_DIR$/../student_dashboard/urls.py" />
       <change beforePath="$PROJECT_DIR$/../student_dashboard/views.py" afterPath="$PROJECT_DIR$/../student_dashboard/views.py" />
       <change beforePath="$PROJECT_DIR$/../templates/base/dashboard/base.html" afterPath="$PROJECT_DIR$/../templates/base/dashboard/base.html" />
@@ -42,88 +64,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../admin_dashboard/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="124" column="8" lean-forward="true" selection-start-line="124" selection-start-column="8" selection-end-line="126" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#44#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../courses/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="202" column="64" lean-forward="true" selection-start-line="202" selection-start-column="64" selection-end-line="202" selection-end-column="64" />
-              <folding>
-                <element signature="e#0#62#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../student_dashboard/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="28" column="49" lean-forward="false" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
-              <folding>
-                <element signature="e#0#44#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../accounts/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../accounts/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base_student.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../templates/base/dashboard/base_student.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="149" column="68" lean-forward="false" selection-start-line="149" selection-start-column="68" selection-end-line="149" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../student_dashboard/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="2" column="41" lean-forward="false" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -149,57 +90,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/../analytics/admin.py" />
+        <option value="$PROJECT_DIR$/../analytics/utils.py" />
+        <option value="$PROJECT_DIR$/../analytics/signals.py" />
+        <option value="$PROJECT_DIR$/../analytics/mixins.py" />
+        <option value="$PROJECT_DIR$/../analytics/models.py" />
+        <option value="$PROJECT_DIR$/../accounts/signals.py" />
         <option value="$PROJECT_DIR$/settings.py" />
-        <option value="$PROJECT_DIR$/../chat_system/form.py" />
-        <option value="$PROJECT_DIR$/../announcement/form.py" />
-        <option value="$PROJECT_DIR$/../announcement/admin.py" />
-        <option value="$PROJECT_DIR$/../announcement/models.py" />
         <option value="$PROJECT_DIR$/urls.py" />
-        <option value="$PROJECT_DIR$/../announcement/templates/announcement/admin-announcement-update.html" />
-        <option value="$PROJECT_DIR$/../announcement/templates/announcement/admin-announcement-delete.html" />
-        <option value="$PROJECT_DIR$/../announcement/urls.py" />
-        <option value="$PROJECT_DIR$/../announcement/templates/announcement/admin-add-announcement.html" />
-        <option value="$PROJECT_DIR$/templates/base/dashboard/base.html" />
-        <option value="$PROJECT_DIR$/admin_dashboard/views.py" />
-        <option value="$PROJECT_DIR$/admin_dashboard/templates/super-admin/admin-dashboard.html" />
-        <option value="$PROJECT_DIR$/../courses/admin.py" />
-        <option value="$PROJECT_DIR$/../courses/templates/courses/admin-display-courses.html" />
-        <option value="$PROJECT_DIR$/../courses/templates/courses/admin-subject-update.html" />
-        <option value="$PROJECT_DIR$/../courses/templates/courses/admin-add-subject.html" />
-        <option value="$PROJECT_DIR$/../courses/templates/courses/admin-subject-delete.html" />
+        <option value="$PROJECT_DIR$/../student_dashboard/urls.py" />
+        <option value="$PROJECT_DIR$/../chat_system/templatetags/app_filters.py" />
+        <option value="$PROJECT_DIR$/../student_dashboard/templatetags/app_filters.py" />
+        <option value="$PROJECT_DIR$/../chat_system/templatetags/convert_ids_form.py" />
         <option value="$PROJECT_DIR$/../courses/templates/courses/admin-term-update.html" />
         <option value="$PROJECT_DIR$/../courses/templates/courses/admin-add-term.html" />
-        <option value="$PROJECT_DIR$/../courses/templates/courses/admin-term-delete.html" />
-        <option value="$PROJECT_DIR$/../student_dashboard/form.py" />
-        <option value="$PROJECT_DIR$/../edu_fcih/urls.py" />
-        <option value="$PROJECT_DIR$/../../../multichat/accounts/views.py" />
-        <option value="$PROJECT_DIR$/../chat_system/models.py" />
-        <option value="$PROJECT_DIR$/../../../my_resume/my_resume/static/js/void.js" />
-        <option value="$PROJECT_DIR$/../../../my_resume/my_resume/resume/templates/index.html" />
-        <option value="$PROJECT_DIR$/../../../my_resume/my_resume/static/css/void-designer.css" />
-        <option value="$PROJECT_DIR$/../student_dashboard/templates/student/student-dashboard.html" />
-        <option value="$PROJECT_DIR$/../student_dashboard/templates/student/student-register-course.html" />
-        <option value="$PROJECT_DIR$/../courses/urls.py" />
-        <option value="$PROJECT_DIR$/../student_dashboard/urls.py" />
-        <option value="$PROJECT_DIR$/../courses/form.py" />
-        <option value="$PROJECT_DIR$/../courses/templates/courses/student-register-course.html" />
-        <option value="$PROJECT_DIR$/../courses/models.py" />
-        <option value="$PROJECT_DIR$/../admin_dashboard/form.py" />
-        <option value="$PROJECT_DIR$/../admin_dashboard/urls.py" />
-        <option value="$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-add-admin.html" />
-        <option value="$PROJECT_DIR$/../chat_system/views.py" />
-        <option value="$PROJECT_DIR$/../chat_system/templatetags/convert_id_reciever.py" />
-        <option value="$PROJECT_DIR$/../chat_system/templatetags/app_filters.py" />
-        <option value="$PROJECT_DIR$/../chat_system/templates/messages/message.html" />
         <option value="$PROJECT_DIR$/../templates/base/dashboard/base.html" />
-        <option value="$PROJECT_DIR$/../templates/base/dashboard/base_student.html" />
-        <option value="$PROJECT_DIR$/../accounts/forms.py" />
-        <option value="$PROJECT_DIR$/../accounts/views.py" />
-        <option value="$PROJECT_DIR$/../edu_fcih/settings.py" />
-        <option value="$PROJECT_DIR$/../admin_dashboard/views.py" />
-        <option value="$PROJECT_DIR$/../announcement/views.py" />
+        <option value="$PROJECT_DIR$/../chat_system/models.py" />
+        <option value="$PROJECT_DIR$/../admin_dashboard/models.py" />
+        <option value="$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-add-admin.html" />
+        <option value="$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-add-doctor.html" />
+        <option value="$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-add-student.html" />
+        <option value="$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-add-student-profile.html" />
+        <option value="$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-add-doctor-profile.html" />
+        <option value="$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-doctor-update.html" />
+        <option value="$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-student-update.html" />
+        <option value="$PROJECT_DIR$/../admin_dashboard/form.py" />
+        <option value="$PROJECT_DIR$/../announcement/templates/announcement/admin-add-announcement.html" />
+        <option value="$PROJECT_DIR$/../announcement/templates/announcement/admin-announcement-update.html" />
+        <option value="$PROJECT_DIR$/../announcement/form.py" />
+        <option value="$PROJECT_DIR$/../chat_system/form.py" />
+        <option value="$PROJECT_DIR$/../chat_system/templates/messages/message.html" />
+        <option value="$PROJECT_DIR$/../courses/templates/courses/student-register-course.html" />
         <option value="$PROJECT_DIR$/../courses/views.py" />
+        <option value="$PROJECT_DIR$/../courses/form.py" />
+        <option value="$PROJECT_DIR$/../student_dashboard/templates/student/student-dashboard.html" />
+        <option value="$PROJECT_DIR$/../accounts/templates/auth/change_password.html" />
+        <option value="$PROJECT_DIR$/../accounts/forms.py" />
+        <option value="$PROJECT_DIR$/../templates/base/dashboard/base_student.html" />
+        <option value="$PROJECT_DIR$/../accounts/templates/auth/student_change_password.html" />
+        <option value="$PROJECT_DIR$/../admin_dashboard/views.py" />
+        <option value="$PROJECT_DIR$/../chat_system/templatetags/convert_id_reciever.py" />
+        <option value="$PROJECT_DIR$/../doctor_dashboard/urls.py" />
+        <option value="$PROJECT_DIR$/../accounts/urls.py" />
+        <option value="$PROJECT_DIR$/../accounts/templates/auth/doc_change_password.html" />
+        <option value="$PROJECT_DIR$/../accounts/views.py" />
         <option value="$PROJECT_DIR$/../student_dashboard/views.py" />
+        <option value="$PROJECT_DIR$/../doctor_dashboard/views.py" />
+        <option value="$PROJECT_DIR$/../doctor_dashboard/templates/doctor_dashboard/doctor-dashboard.html" />
+        <option value="$PROJECT_DIR$/../templates/base/dashboard/base_doctor.html" />
+        <option value="$PROJECT_DIR$/../chat_system/views.py" />
+        <option value="$PROJECT_DIR$/../chat_system/templates/messages/doctor_message.html" />
+        <option value="$PROJECT_DIR$/../chat_system/templates/messages/studen_message.html" />
       </list>
     </option>
   </component>
@@ -261,39 +202,6 @@
               <item name="." type="b2602c69:ProjectViewProjectNode" />
               <item name="edu_fcih" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="." type="b2602c69:ProjectViewProjectNode" />
-              <item name="edu_fcih" type="462c0819:PsiDirectoryNode" />
-              <item name="courses" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="." type="b2602c69:ProjectViewProjectNode" />
-              <item name="edu_fcih" type="462c0819:PsiDirectoryNode" />
-              <item name="edu_fcih" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="." type="b2602c69:ProjectViewProjectNode" />
-              <item name="edu_fcih" type="462c0819:PsiDirectoryNode" />
-              <item name="student_dashboard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="." type="b2602c69:ProjectViewProjectNode" />
-              <item name="edu_fcih" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="." type="b2602c69:ProjectViewProjectNode" />
-              <item name="edu_fcih" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="." type="b2602c69:ProjectViewProjectNode" />
-              <item name="edu_fcih" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -305,7 +213,7 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../ecommerce" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
@@ -527,7 +435,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="56" width="1366" height="740" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -535,7 +442,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3213763" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24158126" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -550,6 +457,28 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3213763" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -559,408 +488,239 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../announcement/form.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="3" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../announcement/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../courses/templates/courses/admin-subject-update.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="15" column="98" lean-forward="false" selection-start-line="15" selection-start-column="98" selection-end-line="15" selection-end-column="98" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-student-delete.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-449">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../courses/templates/courses/admin-term-update.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="48" lean-forward="false" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../courses/templates/courses/admin-subject-delete.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="99" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../courses/templates/courses/admin-term-delete.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="8" column="88" lean-forward="false" selection-start-line="8" selection-start-column="88" selection-end-line="8" selection-end-column="88" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../courses/templates/courses/admin-add-term.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="59" column="136" lean-forward="false" selection-start-line="59" selection-start-column="136" selection-end-line="59" selection-end-column="136" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../courses/templates/courses/admin-add-subject.html">
+    <entry file="file://$PROJECT_DIR$/../chat_system/models.py" />
+    <entry file="file://$PROJECT_DIR$/../templates/base/static/fonts.html" />
+    <entry file="file://$USER_HOME$/multichat/accounts/form.py" />
+    <entry file="file://$PROJECT_DIR$/../admin_dashboard/models.py" />
+    <entry file="file://$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-add-doctor.html" />
+    <entry file="file://$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-add-student.html" />
+    <entry file="file://$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-doctor-update.html" />
+    <entry file="file://$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-add-doctor-profile.html" />
+    <entry file="file://$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-student-update.html" />
+    <entry file="file://$PROJECT_DIR$/../announcement/models.py" />
+    <entry file="file://$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-add-student-profile.html" />
+    <entry file="file://$PROJECT_DIR$/../announcement/form.py" />
+    <entry file="file://$PROJECT_DIR$/../admin_dashboard/form.py" />
+    <entry file="file://$PROJECT_DIR$/../student_dashboard/form.py" />
+    <entry file="file://$PROJECT_DIR$/../announcement/templates/announcement/admin-add-announcement.html" />
+    <entry file="file://$PROJECT_DIR$/../announcement/templates/announcement/admin-announcement-update.html" />
+    <entry file="file://$PROJECT_DIR$/../courses/templates/courses/student-register-course.html" />
+    <entry file="file://$PROJECT_DIR$/../chat_system/form.py" />
+    <entry file="file://$PROJECT_DIR$/../courses/views.py" />
+    <entry file="file://$PROJECT_DIR$/../courses/form.py" />
+    <entry file="file://$PROJECT_DIR$/../accounts/signals.py" />
+    <entry file="file://$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-add-admin.html" />
+    <entry file="file://$PROJECT_DIR$/../accounts/forms.py" />
+    <entry file="file://$PROJECT_DIR$/../courses/models.py" />
+    <entry file="file://$PROJECT_DIR$/../admin_dashboard/urls.py" />
+    <entry file="file://$PROJECT_DIR$/../admin_dashboard/views.py" />
+    <entry file="file://$PROJECT_DIR$/../courses/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../edu_fcih/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="33" column="85" lean-forward="false" selection-start-line="33" selection-start-column="85" selection-end-line="33" selection-end-column="85" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../multichat/accounts/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#28#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../chat_system/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="12" column="67" lean-forward="false" selection-start-line="12" selection-start-column="67" selection-end-line="12" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../my_resume/my_resume/static/css/swiper.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../my_resume/my_resume/resume/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="280" column="14" lean-forward="true" selection-start-line="280" selection-start-column="14" selection-end-line="280" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../my_resume/my_resume/static/css/swiper.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8208">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../my_resume/my_resume/static/js/void.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="32" lean-forward="true" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../my_resume/my_resume/static/css/void-designer.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="1060" column="22" lean-forward="true" selection-start-line="1060" selection-start-column="22" selection-end-line="1060" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="252" column="52" lean-forward="false" selection-start-line="252" selection-start-column="52" selection-end-line="257" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../ecommerce/src/products/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="90" column="4" lean-forward="true" selection-start-line="90" selection-start-column="4" selection-end-line="90" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../ecommerce/src/products/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1026">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../student_dashboard/templates/student/student-dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="292" column="0" lean-forward="false" selection-start-line="292" selection-start-column="0" selection-end-line="292" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../courses/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../courses/templates/courses/admin-display-courses.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="44" column="18" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="44" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../multichat/templates/send_message.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="30" lean-forward="false" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../multichat/accounts/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-399">
-          <caret line="41" column="74" lean-forward="false" selection-start-line="41" selection-start-column="74" selection-end-line="41" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../courses/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="37" column="24" lean-forward="true" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../courses/form.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="46" column="52" lean-forward="false" selection-start-line="46" selection-start-column="52" selection-end-line="46" selection-end-column="52" />
+        <state relative-caret-position="40">
+          <caret line="18" column="35" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="18" selection-end-column="35" />
           <folding>
-            <element signature="e#0#24#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../courses/templates/courses/student-register-course.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="25" column="69" lean-forward="false" selection-start-line="25" selection-start-column="69" selection-end-line="25" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-add-doctor.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-171">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../templates/base/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../admin_dashboard/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="6" column="50" lean-forward="false" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../ecommerce/src/accounts/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../admin_dashboard/templates/super-admin/admin-add-admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="34" column="120" lean-forward="false" selection-start-line="34" selection-start-column="120" selection-end-line="34" selection-end-column="120" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../admin_dashboard/form.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="40" column="67" lean-forward="false" selection-start-line="40" selection-start-column="67" selection-end-line="40" selection-end-column="67" />
-          <folding>
-            <element signature="e#0#24#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../admin_dashboard/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-570">
-          <caret line="50" column="10" lean-forward="true" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../chat_system/templates/messages/message.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="33" column="91" lean-forward="false" selection-start-line="33" selection-start-column="91" selection-end-line="33" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../chat_system/templatetags/app_filters.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../chat_system/templatetags/convert_id_reciever.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="51" lean-forward="false" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../student_dashboard/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="2" column="41" lean-forward="false" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../templates/base/dashboard/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="117" column="68" lean-forward="false" selection-start-line="117" selection-start-column="68" selection-end-line="117" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../templates/base/dashboard/base_student.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="149" column="68" lean-forward="false" selection-start-line="149" selection-start-column="68" selection-end-line="149" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../student_dashboard/form.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../accounts/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../accounts/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../accounts/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="591">
-          <caret line="40" column="28" lean-forward="true" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../announcement/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="66" column="43" lean-forward="false" selection-start-line="66" selection-start-column="43" selection-end-line="66" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../edu_fcih/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="33" column="5" lean-forward="false" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+        <state relative-caret-position="0">
+          <caret line="65" column="52" lean-forward="false" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../chat_system/templatetags/convert_ids_form.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../admin_dashboard/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="250" column="8" lean-forward="true" selection-start-line="250" selection-start-column="8" selection-end-line="252" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../student_dashboard/templatetags-edit/convert_id_reciever.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../chat_system/templatetags/convert_id_reciever.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="27" column="22" lean-forward="false" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../student_dashboard/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="5" column="18" lean-forward="false" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../doctor_dashboard/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../chat_system/templatetags/app_filters.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="21" lean-forward="false" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../edu_fcih/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="31" column="54" lean-forward="false" selection-start-line="31" selection-start-column="54" selection-end-line="31" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../chat_system/templates/messages/message.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-399">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../accounts/templates/auth/st_change_password.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../accounts/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="103" column="34" lean-forward="false" selection-start-line="103" selection-start-column="34" selection-end-line="103" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../accounts/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../accounts/templates/auth/doc_change_password.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="38" lean-forward="false" selection-start-line="0" selection-start-column="38" selection-end-line="0" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../doctor_dashboard/templates/doctor_dashboard/doctor-dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="178" column="44" lean-forward="false" selection-start-line="178" selection-start-column="44" selection-end-line="178" selection-end-column="44" />
+          <folding>
+            <element signature="e#6467#7522#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../student_dashboard/templates/student/student-dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="232" column="40" lean-forward="false" selection-start-line="232" selection-start-column="40" selection-end-line="255" selection-end-column="46" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../templates/base/dashboard/base_doctor.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="120" column="29" lean-forward="true" selection-start-line="120" selection-start-column="29" selection-end-line="120" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../templates/base/dashboard/base_student.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="112" column="40" lean-forward="true" selection-start-line="112" selection-start-column="40" selection-end-line="112" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../doctor_dashboard/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../chat_system/templates/messages/doctor_message.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="35" column="70" lean-forward="false" selection-start-line="35" selection-start-column="70" selection-end-line="35" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../chat_system/templates/messages/studen_message.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="34" column="89" lean-forward="false" selection-start-line="34" selection-start-column="89" selection-end-line="34" selection-end-column="89" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../chat_system/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="42" column="41" lean-forward="false" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../courses/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="202" column="64" lean-forward="true" selection-start-line="202" selection-start-column="64" selection-end-line="202" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#62#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../admin_dashboard/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="124" column="8" lean-forward="true" selection-start-line="124" selection-start-column="8" selection-end-line="126" selection-end-column="37" />
+        <state relative-caret-position="475">
+          <caret line="121" column="49" lean-forward="false" selection-start-line="121" selection-start-column="49" selection-end-line="121" selection-end-column="49" />
           <folding>
             <element signature="e#0#44#0" expanded="true" />
           </folding>
@@ -969,11 +729,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../student_dashboard/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="28" column="49" lean-forward="false" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="19">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="5" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>

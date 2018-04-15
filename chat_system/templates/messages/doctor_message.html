@@ -1,0 +1,100 @@
+{% extends 'base/dashboard/base_doctor.html' %}
+{% load static %}
+{% load app_filters %}
+{% load convert_id_reciever %}
+{% load convert_id_img %}
+{% load convert_ids_form %}
+	{% block content %}
+
+
+
+			<!-- MAIN CONTENT -->
+			<div class="main-content" id="content-wrapper">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-12 clear-padding-xs">
+							<h5 class="page-title"><i class="fa fa-envelope-o"></i>MESSAGES</h5>
+
+							<div class="section-divider"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-12 clear-padding-xs">
+							<div class="col-md-6">
+								<div class="my-msg dash-item first-dash-item">
+									<h6 class="item-title"><i class="fa fa-envelope-o"></i>MY MESSAGES {{ date }}</h6>
+									<div class="inner-item">
+										<div class="msg-item">
+
+                                            {% for message in messages %}
+                                                <div class="col-xs-2 clear-padding">
+												<img src="{{ message.sender|convert_id_img }}" alt="user" />
+											</div>
+											<div class="col-xs-10">
+												<p class="title">{{ message.message_subject }}</p>
+												<p class="sent-by"> From :{{ message.sender|convert_id_sender }} </p>
+                                                <p class="sent-by"> ID :{{ message.sender }} </p>
+												<p class="msg-desc">{{ message.message_content }}</p>
+												<p class="timestamp"><i class="fa fa-clock-o"></i> <i>{{ message.created|timesince }} ago.</i></p>
+											</div>
+											<div class="clearfix"></div>
+                                            {% endfor %}
+
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="dash-item first-dash-item">
+									<h6 class="item-title"><i class="fa fa-paper-plane"></i>CREATE NEW MESSAGE</h6>
+									<div class="inner-item">
+                                        <form action="" method="post">
+                                            {% csrf_token %}
+                                            <div class="form_errors">
+                                                {% if form.errors %}
+                                                    <h5>{{ form.message_subject.errors }}</h5>
+                                                    <h5>{{ form.message_content.errors }}</h5>
+                                                {% endif %}
+                                            </div>
+										<div class="dash-form">
+											<div class="col-xs-6">
+												<label class="clear-top-margin"><i class="fa fa-user-circle-o"></i>Admins</label>
+												{{ form.reciever_admin }}
+											</div>
+											<div class="col-xs-6">
+												<label class="clear-top-margin"><i class="fa fa-user-circle-o"></i>STUDENT</label>
+												{{ form.reciever_student|convert_ids_form }}
+											</div>
+											<div class="clearfix"></div>
+											<div class="col-sm-12">
+												<label><i class="fa fa-bullhorn"></i>SUBJECT</label>
+												{{ form.message_subject }}
+											</div>
+											<div class="col-sm-12">
+												<label><i class="fa fa-info-circle"></i>MESSAGE</label>
+												{{ form.message_content }}
+											</div>
+                                            <br>
+
+										<div class="clearfix"></div>
+                                            <br>
+											<div class="col-sm-12">
+												<button type="submit"><i class="fa fa-paper-plane"></i> SEND</button>
+											</div>
+										</div>
+                                            </form>
+										<div class="clearfix"></div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="menu-togggle-btn">
+					<a href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars"></i></a>
+				</div>
+
+			</div>
+
+{% endblock %}
