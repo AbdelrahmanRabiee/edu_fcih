@@ -7,5 +7,5 @@ it consists of 3 users ->
 - student -+-> can register course , send and recieve messages 
 
 
-my project is under constructing, so stay tuned for my great project 
+my project is under development, so stay tuned for my great project
   
